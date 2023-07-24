@@ -76,3 +76,7 @@
 .sec3 {
   background: #f7f7f7;
 }
+/*  이미지를 로딩하는 동안 보이지 않게 함*/
+.gallery_item.is_loading {
+  opacity: 0;
+}
