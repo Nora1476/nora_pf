@@ -21,32 +21,81 @@ $(function () {
   });
 
   //갤러리(masonry 라이브러리 사용)
-  var $container = $(".sec3 .gallery");
+  var $container = $(".sec3 .gallery"),
+    $loadMoreBtn = $(".load-more"),
+    $addItemCount = 8,
+    $added = 0, //더보기 버튼을 클릭해서 추가된 항목수(리스트 항목을 모두 로드했을때 , 더보기 버튼을 사라지게하기 위함)
+    $allData = [];
   $container.masonry({
     // options
     itemSelector: ".gallery_item",
-    columnWidth: 200,
-    gutter: 10,
+    columnWidth: 250,
+    gutter: 20,
   });
 
   // $.getJSON("파일경로", function(data){});
-  // 이미지데이터 사용
-  $.getJSON("./data/content.json", function (data) {
-    var elements = [];
-    $.each(data, function (i, item) {
-      //1. json파일에 있는 이미지 정보를 반복문을 돌며 li태그로 셋팅
-      var itemHTML = '<li class="gallery_item is_loading">' + '<a href="' + item.images.large + '">' + '<img src="' + item.images.thumb + '" alt="' + item.title + '">' + "</a>" + "</li>";
+  //z 이미지데이터 사용
+  $.getJSON("./data/content.json", initGallery);
 
-      elements.push($(itemHTML).get(0)); // 2. $붙여 jquery 객체형태 바꾸고, get(0)을 사용하여 html태그형식으로 바꾸어 배열에 집어넣음
+  function initGallery(data) {
+    //매개변수를 하나만 쓰면 data를 몽땅 가져온다는 뜻
+    //매개변수를 두개쓰면 첫번쨰 i 인덱스, 두번째 data 내용
+    $allData = data; //전체 데이터를 가져옴
+    //console.log(data);
+
+    /* 클릭했을떄 8개씩 로드
+    $loadMoreBtn.click(function(){
+      $addItem()
+    })
+    */
+    addItem(); // 열자마자 아이템 추가
+    $loadMoreBtn.click(addItem); //버튼 클릭시 아이템 추가
+  } //initGallery
+
+  function addItem() {
+    var elements = [];
+    var slidedData;
+    //A.slice(0,8)  A배열 0번째부터 번쨰 전까지의 값을 가져옴
+    slidedData = $allData.slice($added, $added + $addItemCount);
+
+    /* 
+     $('li').each(function(){ });   jquery object
+     $.each('배열', function(i, item){ });   json, 배열의 값마다 할 일
+    */
+    $.each(slidedData, function (i, item) {
+      var itemHTML = '<li class="gallery_item is_loading">' + "<figure>" + '<img src="' + item.images.thumb + '" alt="' + item.title + '">' + "</figure>" + "</li>";
+
+      elements.push($(itemHTML).get(0)); //슬라이스로 잘라서 가져온 데이터를 사용하여 변수 itemHTML을 반복문을 통해 elements 배열에 넣음
     }); //each
 
-    $container.append(elements); //3. 리스트 정보를 $container 뒤에 삽입.
+    $container.append(elements);
+
+    //$added값을 업데이트
+    $added += slidedData.length;
+
+    if ($added < $allData.length) {
+      $loadMoreBtn.show();
+    } else {
+      $loadMoreBtn.hide();
+    }
 
     $container.imagesLoaded(function () {
       $container.find("li").removeClass("is_loading");
       $container.masonry("appended", elements);
-    }); //4. 리스트이미지가 다 로드된 후에 masonry 라이브러리사용하여 화면구성
-  }); //getJSON
+    });
+  }
+
+  //갤러리 이미지 light box
+  $(".sec3 .gallery > li ").click(function () {
+    console.log("클릭");
+    // const imageSrc = $(this).attr("data");
+    // $("#lightbox-img").attr("src", imageSrc);
+    // $("#lightbox").removeClass("hide");
+  });
+
+  $("#lightbox .close").click(function () {
+    $("#lightbox").addClass("hide");
+  });
 
   // toTop버튼
   $(window).scroll(function () {

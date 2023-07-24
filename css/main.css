@@ -77,6 +77,45 @@
   background: #f7f7f7;
 }
 /*  이미지를 로딩하는 동안 보이지 않게 함*/
-.gallery_item.is_loading {
+.sec3 .gallery_item.is_loading {
   opacity: 0;
+}
+.sec3 .gallery {
+  width: 100%;
+  text-align: center;
+}
+.sec3 .gallery .gallery_item {
+  margin-bottom: 10px;
+  cursor: pointer;
+}
+.sec3 .gallery .gallery_item figure,
+.sec3 .gallery .gallery_item figure > img {
+  width: 100%;
+}
+.sec3 #lightbox {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  z-index: 20;
+}
+.sec3 .lightbox_img {
+  max-width: 90%;
+  max-height: 90%;
+}
+.sec3 .close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  font-size: 25px;
+  color: #fff;
+  cursor: pointer;
+}
+.hide {
+  display: none !important;
 }
