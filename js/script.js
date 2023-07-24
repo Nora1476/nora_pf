@@ -2,7 +2,7 @@ $(function () {
   //pc버전 header 고정
   $(window).scroll(function () {
     var t_point = $(window).scrollTop();
-    if (t_point > 200) {
+    if (t_point > 20) {
       $("header .gnb_wrap, .gnb.pc_ver .main_menu .links").addClass("on");
     } else {
       $("header .gnb_wrap, .gnb.pc_ver .main_menu .links").removeClass("on");

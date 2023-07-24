@@ -38,6 +38,9 @@ header .inner .gnb_wrap {
   left: 0;
   top: 0;
 }
+header .inner .gnb_wrap.on {
+  background: #fff;
+}
 header .gnb_inner {
   width: 100%;
   min-width: 800px;
@@ -77,6 +80,61 @@ header .gnb_inner > a {
 header .mo_ver {
   display: none !important;
 }
+
+/* main */
+main {
+  margin: 0 auto;
+}
+main .sec:not(:first-child) .sec_inner {
+  width: 100%;
+  max-width: 1080px;
+  margin: 0 auto;
+}
+.sec:not(:first-child) {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 80px 0;
+}
+.sec .tit_wrap {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.sec .tit_wrap > h2 {
+  font-size: 30px;
+  text-transform: uppercase;
+  font-weight: 600;
+  position: relative;
+}
+.sec .tit_wrap::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: #32c5d2;
+  margin: 30px auto;
+}
+
+.line_right {
+  width: 100%;
+  height: 1px;
+  background: #32c5d2;
+  position: relative;
+}
+.line_right::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  display: block;
+  position: absolute;
+  top: -4px;
+  right: -20px;
+  background: #32c5d2;
+  border-radius: 10px;
+}
+
 /* toTop */
 #toTop {
   width: 48px;
