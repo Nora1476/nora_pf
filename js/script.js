@@ -1,8 +1,16 @@
 $(function () {
+  //aos 스크롤 라이브러리
+  setTimeout(() => {
+    AOS.init({
+      offset: 120,
+      // once: true,
+    });
+  }, 120);
+
   //pc버전 header 고정
   $(window).scroll(function () {
     var t_point = $(window).scrollTop();
-    if (t_point > 20) {
+    if (t_point > 10) {
       $("header .gnb_wrap, .gnb.pc_ver .main_menu .links").addClass("on");
     } else {
       $("header .gnb_wrap, .gnb.pc_ver .main_menu .links").removeClass("on");
@@ -22,15 +30,16 @@ $(function () {
 
   //갤러리(masonry 라이브러리 사용)
   var $container = $(".sec3 .gallery"),
-    $loadMoreBtn = $(".load-more"),
-    $addItemCount = 8,
+    $loadMoreBtn = $(".load_more"),
+    $addItemCount = 10,
     $added = 0, //더보기 버튼을 클릭해서 추가된 항목수(리스트 항목을 모두 로드했을때 , 더보기 버튼을 사라지게하기 위함)
     $allData = [];
   $container.masonry({
     // options
     itemSelector: ".gallery_item",
-    columnWidth: 250,
-    gutter: 20,
+    percentPosition: true,
+    columnWidth: ".gallery_sizer",
+    gutter: 10,
   });
 
   // $.getJSON("파일경로", function(data){});

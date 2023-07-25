@@ -17,6 +17,9 @@ input {
   text-indent: 10px;
   font-family: "Pretendard";
 }
+.hide {
+  display: none !important;
+}
 
 /* header */
 header .inner {

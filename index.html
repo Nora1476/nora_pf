@@ -13,6 +13,9 @@
     <link rel="stylesheet" type="text/css" href="./js/slick/slick.css" />
     <link rel="stylesheet" type="text/css" href="./js/slick/slick-theme.css" />
 
+    <!-- aos scroll -->
+    <link rel="stylesheet" href="./css/aos.css" />
+
     <link rel="stylesheet" href="./css/common.css" />
     <link rel="stylesheet" href="./css/main.css" />
   </head>
@@ -57,7 +60,7 @@
         <div class="sec sec2">
           <div class="sec_inner">
             <div class="tit_wrap"><h2>About</h2></div>
-            <div class="about">
+            <div class="about" data-aos="fade-up">
               <div class="a1">
                 <img src="./img/image/about.png" alt="about" />
               </div>
@@ -80,10 +83,11 @@
         <div class="sec sec3">
           <div class="sec_inner">
             <div class="tit_wrap"><h2>LATEST PORTFOLIO</h2></div>
-            <ul class="gallery" id="gallery">
+            <ul class="gallery" id="gallery" data-aos="fade-right">
+              <li class="gallery_sizer"></li>
               <!-- <li class="gallery_item"></li> -->
             </ul>
-            <button class="load-more" id="load-more">Load more</button>
+            <button class="load_more" id="load_more">Load more</button>
 
             <div id="lightbox" class="hide">
               <span class="close">&times;</span>
@@ -137,6 +141,9 @@
 
     <!-- slick slide -->
     <script type="text/javascript" src="./js/slick/slick.min.js"></script>
+
+    <!-- aos scroll -->
+    <script type="text/javascript" src="./js/aos/aos.js"></script>
 
     <script src="/js/script.js"></script>
   </body>

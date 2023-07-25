@@ -64,7 +64,7 @@
 .sec2 .about .a2 > p {
   color: #5c6873;
   font-weight: 300;
-  font-size: 17px;
+  font-size: 18px;
   line-height: 40px;
   text-align: center;
 }
@@ -84,13 +84,32 @@
   width: 100%;
   text-align: center;
 }
+.gallery_sizer,
+.gallery_item {
+  width: calc((100% - 30px) / 4);
+  overflow: hidden;
+}
 .sec3 .gallery .gallery_item {
   margin-bottom: 10px;
   cursor: pointer;
 }
-.sec3 .gallery .gallery_item figure,
-.sec3 .gallery .gallery_item figure > img {
+.sec3 .gallery .gallery_item > figure {
   width: 100%;
+  overflow: hidden;
+}
+.sec3 .gallery .gallery_item > figure > img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.sec .load_more {
+  display: block;
+  margin: 60px auto 0;
+  font-size: 20px;
+  font-weight: bold;
+  padding: 20px 40px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.25);
 }
 .sec3 #lightbox {
   display: flex;
@@ -115,7 +134,4 @@
   font-size: 25px;
   color: #fff;
   cursor: pointer;
-}
-.hide {
-  display: none !important;
 }
