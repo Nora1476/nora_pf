@@ -93,6 +93,11 @@
   margin-bottom: 10px;
   cursor: pointer;
 }
+
+.sec3 .gallery .gallery_item:hover img {
+  transition: all 0.5s ease;
+  transform: scale(1.1);
+}
 .sec3 .gallery .gallery_item > figure {
   width: 100%;
   overflow: hidden;

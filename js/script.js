@@ -41,11 +41,9 @@ $(function () {
     columnWidth: ".gallery_sizer",
     gutter: 10,
   });
-
   // $.getJSON("파일경로", function(data){});
-  //z 이미지데이터 사용
+  // 이미지데이터 사용
   $.getJSON("./data/content.json", initGallery);
-
   function initGallery(data) {
     //매개변수를 하나만 쓰면 data를 몽땅 가져온다는 뜻
     //매개변수를 두개쓰면 첫번쨰 i 인덱스, 두번째 data 내용
@@ -60,7 +58,6 @@ $(function () {
     addItem(); // 열자마자 아이템 추가
     $loadMoreBtn.click(addItem); //버튼 클릭시 아이템 추가
   } //initGallery
-
   function addItem() {
     var elements = [];
     var slidedData;
@@ -95,7 +92,7 @@ $(function () {
   }
 
   //갤러리 이미지 light box
-  $(".sec3 .gallery > li ").click(function () {
+  $(".galler .gallery_item").click(function () {
     console.log("클릭");
     // const imageSrc = $(this).attr("data");
     // $("#lightbox-img").attr("src", imageSrc);
