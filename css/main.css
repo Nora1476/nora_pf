@@ -1,3 +1,46 @@
+/* main */
+
+.sec1 .gallery {
+  position: relative;
+  height: 800px;
+  overflow: hidden;
+}
+.sec1 .gallery .circle {
+  display: none;
+  width: 1300px;
+  height: 1100px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  border-radius: 48%;
+  transform: translate(-50%, -50%) scale(0.8);
+  background: rgba(0, 0, 0, 0.1);
+  z-index: 2;
+  pointer-events: none;
+}
+.sec1 .gallery .circle.on {
+  display: block;
+  animation: zoomOut 1s forwards;
+}
+@keyframes zoomOut {
+  from {
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+
+  to {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+.sec1 .slick-list {
+  height: 100% !important;
+}
+.sec1 .slick-track {
+  height: 100% !important;
+}
+.sec1 .slick-slide img {
+  margin: -180px 0 0;
+}
+
 .sec1 .slick_next,
 .sec1 .slick_prev {
   width: 97px;
@@ -5,7 +48,13 @@
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  z-index: 10;
+  z-index: 1;
+  filter: brightness(85%) blur(1.5px);
+  transition: all 0.5s ease;
+}
+.sec1 .slick_next:hover,
+.sec1 .slick_prev:hover {
+  filter: brightness(100%) blur(0);
 }
 .sec1 .slick_prev {
   left: 40px;
@@ -38,13 +87,10 @@
 .sec1 .slick-dots li.slick-active button:before {
   background: #000;
 }
-.slick-dotted.slick-slider {
+.sec1 .slick-dotted.slick-slider {
   margin-bottom: 0;
-}
-.slick-slide img {
   width: 100%;
-  display: block;
-  object-fit: cover;
+  height: 100%;
 }
 
 .sec2 .about {
@@ -93,7 +139,6 @@
   margin-bottom: 10px;
   cursor: pointer;
 }
-
 .sec3 .gallery .gallery_item:hover img {
   transition: all 0.5s ease;
   transform: scale(1.1);
@@ -110,11 +155,12 @@
 .sec .load_more {
   display: block;
   margin: 60px auto 0;
+  color: #7f8c97;
   font-size: 20px;
   font-weight: bold;
-  padding: 20px 40px;
+  padding: 16px 40px;
+  border: 2px solid #7f8c97;
   border-radius: 10px;
-  background: rgba(0, 0, 0, 0.25);
 }
 .sec3 #lightbox {
   display: flex;

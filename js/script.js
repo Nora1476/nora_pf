@@ -17,15 +17,26 @@ $(function () {
     }
   });
 
-  //gallery slide
+  //main slide
   $(".slider_gallery").slick({
     dots: true,
     infinite: true,
     speed: 300,
     slidesToShow: 1,
     adaptiveHeight: true,
+    variableWidth: true,
+    centerMode: true,
+    autoplay: true,
+    autoplaySpeed: 5000,
     prevArrow: "<button type='button' class='slick_next'></button>", // 이전 화살표 모양 설정"<button type='button' class='slick-prev'>Previous</button>"
     nextArrow: "<button type='button' class='slick_prev'></button>", // 다음 화살표 모양 설정"<button type='button' class='slick-next'>Next</button>"
+  });
+  $(".slider_gallery").on("afterChange", function () {
+    console.log("동작");
+    $(".circle").addClass("on");
+    setTimeout(function () {
+      $(".circle").remveClass("on");
+    }, 4000);
   });
 
   //갤러리(masonry 라이브러리 사용)
