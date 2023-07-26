@@ -101,7 +101,7 @@ header .gnb_inner > a {
   background-color: #fff;
 }
 header .mo_ver {
-  display: none !important;
+  display: none;
 }
 
 /* main */
@@ -112,6 +112,9 @@ main .sec:not(:first-child) .sec_inner {
   width: 100%;
   max-width: 1080px;
   margin: 0 auto;
+}
+.sec:nth-child(2n + 1) {
+  background: #f7f7f7;
 }
 .sec:not(:first-child) {
   display: flex;
@@ -154,6 +157,24 @@ main .sec:not(:first-child) .sec_inner {
   position: absolute;
   top: -4px;
   right: -20px;
+  background: #32c5d2;
+  border-radius: 10px;
+}
+
+.line_left {
+  width: 100%;
+  height: 1px;
+  background: #32c5d2;
+  position: relative;
+}
+.line_left::after {
+  content: "";
+  width: 10px;
+  height: 10px;
+  display: block;
+  position: absolute;
+  top: -4px;
+  left: -20px;
   background: #32c5d2;
   border-radius: 10px;
 }
@@ -224,4 +245,106 @@ footer .com_info .hr {
 footer .social_area {
   display: flex;
   gap: 20px;
+}
+
+@media all and (max-width: 880px) {
+  header .inner .gnb_wrap {
+    height: 80px;
+  }
+  header .gnb_inner {
+    min-width: 360px;
+  }
+  header .gnb.logo > img {
+    height: 70%;
+  }
+  .gnb.pc_ver {
+    display: none !important;
+  }
+  header .mo_ver {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    position: relative;
+    z-index: 3;
+  }
+  header .mo_ver .mo_menu {
+    font-size: 40px;
+    color: #000;
+    cursor: pointer;
+  }
+  header .mo_ver .main_menu {
+    position: fixed;
+    top: 0;
+    right: -320px;
+    width: 100vw;
+    max-width: 320px;
+    height: 100vh;
+    background: #fff;
+    padding: 32px;
+    overflow: auto;
+    transition: all 1s;
+  }
+  header .mo_ver .main_menu.on {
+    right: 0;
+    box-shadow: 8px 8px 8px rgb(0 0 0 / 15%), 0 0 0 9999px rgb(0 0 0 / 70%);
+  }
+  .mo_ver .main_menu .top {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    margin-bottom: 20px;
+  }
+  header .mo_ver .btn_close {
+    cursor: pointer;
+  }
+  header .mo_ver .links {
+    border-bottom: 1px solid #d1d1d1;
+    padding: 10px 0;
+    margin-bottom: 12px;
+    cursor: pointer;
+  }
+
+  #toTop {
+    width: 40px;
+    height: 40px;
+    bottom: 100px;
+    right: 22px;
+  }
+  #toTop.on {
+    bottom: 22px;
+  }
+
+  /* footer */
+  footer > .inner {
+    width: 100%;
+    padding: 40px 20px;
+  }
+  footer .main_area > h4 {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  footer .com_info {
+    font-size: 14px;
+  }
+  footer .com_info .tel {
+    margin-top: 16px;
+  }
+  footer .com_info .hr {
+    margin: 12px 0;
+  }
+  footer .com_info .copyright {
+    font-size: 12px;
+  }
+
+  footer .social_area {
+    gap: 12px;
+  }
+}
+
+@media all and (max-width: 768px) {
+  #wrap {
+    min-height: 100vh;
+    min-width: 100vw;
+    overflow-x: hidden;
+  }
 }

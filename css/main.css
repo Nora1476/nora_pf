@@ -158,9 +158,6 @@
   line-height: 40px;
 }
 
-.sec3 {
-  background: #f7f7f7;
-}
 /*  이미지를 로딩하는 동안 보이지 않게 함*/
 .sec3 .gallery_item.is_loading {
   opacity: 0;
@@ -276,4 +273,32 @@
 .sec4 .row .con_con .radio_inline {
   margin-left: 10px;
   color: #5c6873;
+}
+
+.sec5 .review {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.sec5 .review .r1 {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+}
+.sec5 .review .r1 > p {
+  color: #5c6873;
+  font-weight: 300;
+  font-size: 18px;
+  line-height: 40px;
+  text-align: center;
+  word-break: keep-all;
+}
+.sec5 .review .r2 {
+  width: 50%;
+  margin: 2em auto;
 }

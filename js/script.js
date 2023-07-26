@@ -1,5 +1,5 @@
 $(function () {
-  //aos 스크롤 라이브러리
+  //aos 스크롤 이벤트
   setTimeout(() => {
     AOS.init({
       offset: 120,
@@ -36,7 +36,6 @@ $(function () {
     $(".circle_wrap").removeClass("on");
   }, 4500);
   $(".slider_gallery").on("afterChange", function () {
-    console.log("동작");
     $(".circle_wrap").toggleClass("on");
     setTimeout(function () {
       $(".circle_wrap").toggleClass("on");
@@ -56,20 +55,12 @@ $(function () {
     columnWidth: ".gallery_sizer",
     gutter: 10,
   });
-  // $.getJSON("파일경로", function(data){});
-  // 이미지데이터 사용
   $.getJSON("./data/content.json", initGallery);
   function initGallery(data) {
     //매개변수를 하나만 쓰면 data를 몽땅 가져온다는 뜻
     //매개변수를 두개쓰면 첫번쨰 i 인덱스, 두번째 data 내용
     $allData = data; //전체 데이터를 가져옴
-    //console.log(data);
 
-    /* 클릭했을떄 8개씩 로드
-    $loadMoreBtn.click(function(){
-      $addItem()
-    })
-    */
     addItem(); // 열자마자 아이템 추가
     $loadMoreBtn.click(addItem); //버튼 클릭시 아이템 추가
   } //initGallery
@@ -79,16 +70,11 @@ $(function () {
     //A.slice(0,8)  A배열 0번째부터 번쨰 전까지의 값을 가져옴
     slidedData = $allData.slice($added, $added + $addItemCount);
 
-    /* 
-     $('li').each(function(){ });   jquery object
-     $.each('배열', function(i, item){ });   json, 배열의 값마다 할 일
-    */
     $.each(slidedData, function (i, item) {
       var itemHTML = '<li class="gallery_item is_loading">' + "<figure>" + '<img src="' + item.images.thumb + '" alt="' + item.title + '">' + "</figure>" + "</li>";
 
       elements.push($(itemHTML).get(0)); //슬라이스로 잘라서 가져온 데이터를 사용하여 변수 itemHTML을 반복문을 통해 elements 배열에 넣음
     }); //each
-
     $container.append(elements);
 
     //$added값을 업데이트
@@ -117,6 +103,9 @@ $(function () {
     $("#lightbox").addClass("hide");
   });
 
+  //video Ratio
+  $(".sec5 .review .r2").fitVids();
+
   // toTop버튼
   $(window).scroll(function () {
     if ($(this).scrollTop() > 100) {
@@ -127,5 +116,15 @@ $(function () {
   });
   $("#toTop").click(function () {
     $("body,html").animate({ scrollTop: 0 }, 800);
+  });
+
+  // 모바일 메뉴 탭
+  $(".mo_menu").click(function () {
+    $("header .mo_ver .main_menu").addClass("on");
+    $("body").css("overflow", "hidden");
+  });
+  $(".btn_close, .mo_ver .main_menu .links").click(function () {
+    $("header .mo_ver .main_menu").removeClass("on");
+    $("body").css("overflow", "auto");
   });
 });
