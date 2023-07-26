@@ -5,9 +5,9 @@
   height: 800px;
   overflow: hidden;
 }
-.sec1 .gallery .circle {
+.sec1 .gallery .circle_wrap {
   display: none;
-  width: 1300px;
+  width: 1200px;
   height: 1100px;
   position: absolute;
   top: 50%;
@@ -16,21 +16,58 @@
   transform: translate(-50%, -50%) scale(0.8);
   background: rgba(0, 0, 0, 0.1);
   z-index: 2;
-  pointer-events: none;
+  /* pointer-events: none; */
 }
-.sec1 .gallery .circle.on {
+.sec1 .gallery .circle_wrap.on {
   display: block;
-  animation: zoomOut 1s forwards;
+  animation: zoomOut 0.5s forwards;
 }
 @keyframes zoomOut {
-  from {
+  0% {
     transform: translate(-50%, -50%) scale(0.5);
   }
-
-  to {
+  50% {
+    transform: translate(-50%, -50%) scale(1.02);
+  }
+  10% {
     transform: translate(-50%, -50%) scale(1);
   }
 }
+.sec1 .gallery .circle_con {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 48px;
+  font-weight: 600;
+  color: #ffffff;
+  text-transform: uppercase;
+  text-align: center;
+  letter-spacing: 1px;
+  line-height: 68px;
+}
+.sec1 .gallery .circle_con span {
+  display: block;
+}
+.sec1 .gallery .circle_btn {
+  display: inline-block;
+  position: absolute;
+  top: 810px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #32c5d2;
+  border-color: #32c5d2;
+  padding: 12px 26px;
+  line-height: 1.33333;
+  border-radius: 6px;
+  z-index: 2;
+}
+.sec1 .gallery .circle_btn > button {
+  color: #ffffff;
+  font-size: 20px;
+  font-weight: bold;
+}
+
 .sec1 .slick-list {
   height: 100% !important;
 }
@@ -38,7 +75,9 @@
   height: 100% !important;
 }
 .sec1 .slick-slide img {
-  margin: -180px 0 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .sec1 .slick_next,
@@ -185,4 +224,56 @@
   font-size: 25px;
   color: #fff;
   cursor: pointer;
+}
+
+.sec4 form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+.sec4 .row {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.sec4 .row .con {
+  width: 20%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+  font-size: 18px;
+  color: #5c6873;
+  margin-right: 20px;
+  padding-top: 4px;
+}
+.sec4 .row .btn {
+  margin: 16px 8px;
+}
+.sec4 .row .con.point::after {
+  content: "*";
+  display: inline-block;
+  margin-left: 4px;
+  color: #32c5d2;
+}
+.sec4 .row .con_con {
+  width: 70%;
+}
+
+.sec4 .row .con_con > input,
+.sec4 .row .con_con > textarea {
+  font-family: "Pretendard";
+  width: 100%;
+  display: block;
+  font-size: 18px;
+  color: #555;
+  line-height: 1.42857;
+  padding: 6px 12px;
+  border: 1px solid #c2cad8;
+}
+.sec4 .row .con_con > input {
+  height: 40px;
+}
+.sec4 .row .con_con .radio_inline {
+  margin-left: 10px;
+  color: #5c6873;
 }

@@ -47,7 +47,14 @@
         <div class="sec sec1" id="sec1">
           <div class="sec_inner">
             <div class="gallery">
-              <div class="circle"></div>
+              <div class="circle_wrap on">
+                <div class="circle_con">
+                  <h2>main <span>content</span></h2>
+                </div>
+                <div class="circle_btn">
+                  <button>더보기</button>
+                </div>
+              </div>
               <div class="slider_gallery">
                 <div>
                   <img src="./img/image/main1.jpg" alt="slide1" />
@@ -99,8 +106,80 @@
           </div>
         </div>
 
-        <div class="sec sec4"></div>
-        <div class="sec sec5"></div>
+        <div class="sec sec4">
+          <div class="sec_inner">
+            <div class="tit_wrap"><h2>contact</h2></div>
+            <form action="">
+              <div class="row">
+                <span class="con point">이름</span>
+                <div class="con_con">
+                  <input class="con_focus" type="text" name="" />
+                </div>
+              </div>
+              <div class="row">
+                <span class="con point">연락처</span>
+                <div class="con_con">
+                  <input type="text" name="" />
+                </div>
+              </div>
+              <div class="row">
+                <span class="con point">이메일</span>
+                <div class="con_con">
+                  <input type="text" name="" />
+                </div>
+              </div>
+              <div class="row">
+                <span class="con">임대차계약</span>
+                <div class="con_con">
+                  <label class="radio_inline"> <input type="radio" name="lease_agreement" id="lease_agreement" value="유" /> 유 </label>
+                  <label class="radio_inline"> <input type="radio" name="lease_agreement" id="lease_agreement" value="무" /> 무 </label>
+                </div>
+              </div>
+              <div class="row">
+                <span class="con">유형</span>
+                <div class="con_con">
+                  <label class="radio_inline"> <input type="radio" name="type" id="type" value="자가" /> 자가 </label>
+                  <label class="radio_inline"> <input type="radio" name="type" id="type" value="전세" /> 전세 </label>
+                  <label class="radio_inline"> <input type="radio" name="type" id="type" value="임대" /> 임대 </label>
+                </div>
+              </div>
+              <div class="row contact">
+                <span class="con">문의내용</span>
+                <div class="con_con">
+                  <textarea name="" id="" rows="6"> </textarea>
+                </div>
+              </div>
+
+              <div class="row">
+                <button class="btn btn_submit">Submit</button>
+                <button class="btn btn_cancel">Cancel</button>
+              </div>
+            </form>
+          </div>
+        </div>
+        <div class="sec sec5">
+          <div class="sec_inner">
+            <div class="tit_wrap"><h2>customer reviews</h2></div>
+
+            <div class="about" data-aos="fade-up">
+              <div class="a1">
+                <img src="./img/image/about.png" alt="about" />
+              </div>
+              <div class="a2">
+                <p class="a_con1">
+                  우리가 디자인하는 모든 것이 사람들의 삶에 영감을 준다는 생각으로
+                  <span>디자인에 임할 것입니다.</span>
+                </p>
+                <div class="line_right"></div>
+                <p class="a_con2">
+                  디자이너들의 실험정신으로 보이는 것 들에만 표현하는 것이 아니라
+                  <span> 보이지 않는 것들을 이끌어 낸 창조적인 디자인을 함으로써,</span>
+                  <span>공간의 미적인 즐거움과 사용하는 즐거움을 동시에 느낄 수 있는</span> 디자인을 행 할것입니다.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </main>
 
       <div id="toTop">
