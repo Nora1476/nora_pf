@@ -248,11 +248,16 @@ footer .social_area {
 }
 
 @media all and (max-width: 880px) {
+  header .inner {
+    height: 80px;
+  }
   header .inner .gnb_wrap {
     height: 80px;
   }
   header .gnb_inner {
     min-width: 360px;
+    gap: 40px;
+    padding: 0 30px;
   }
   header .gnb.logo > img {
     height: 70%;
@@ -346,5 +351,80 @@ footer .social_area {
     min-height: 100vh;
     min-width: 100vw;
     overflow-x: hidden;
+  }
+
+  .btn_submit,
+  .btn_cancel {
+    font-size: 18px;
+    padding: 10px 20px;
+  }
+
+  /* main */
+  .sec:not(:first-child) {
+    min-width: 540px;
+    padding: 60px 20px;
+  }
+  .sec .tit_wrap > h2 {
+    font-size: 28px;
+  }
+  .sec .tit_wrap::after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 3px;
+    background-color: #32c5d2;
+    margin: 20px auto 40px;
+  }
+
+  .btn_submit,
+  .btn_cancel {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px 20px;
+  }
+}
+
+@media all and (max-width: 540px) {
+  /* header */
+  header .inner {
+    height: 60px;
+  }
+  header .inner .gnb_wrap {
+    height: 60px;
+  }
+  header .gnb_inner {
+    min-width: 360px;
+    gap: 40px;
+    padding: 0 20px;
+  }
+  header .gnb_inner > a {
+    justify-content: flex-start;
+  }
+  header .gnb.logo > img {
+    height: 50%;
+  }
+  header .mo_ver .mo_menu {
+    font-size: 28px;
+  }
+
+  /* main */
+  .sec:not(:first-child) {
+    min-width: 360px;
+    padding: 40px 20px;
+  }
+  .sec .tit_wrap > h2 {
+    font-size: 20px;
+  }
+  .sec .tit_wrap::after {
+    content: "";
+    display: block;
+    margin: 16px auto 30px;
+  }
+
+  .btn_submit,
+  .btn_cancel {
+    font-size: 14px;
+    font-weight: bold;
+    padding: 10px 16px;
   }
 }
