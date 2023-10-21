@@ -62,7 +62,8 @@ header .inner .gnb_wrap {
   top: 0;
 }
 header .inner .gnb_wrap.on {
-  background: #fff;
+  /* background: #fff; */
+  backdrop-filter: blur(20px);
 }
 header .gnb_inner {
   width: 100%;
@@ -98,7 +99,7 @@ header .gnb_inner > a {
   cursor: pointer;
 }
 .gnb.pc_ver .main_menu .links.on {
-  background-color: #fff;
+  /* background-color: #fff; */
 }
 header .mo_ver {
   display: none;
