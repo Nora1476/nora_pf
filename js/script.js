@@ -17,6 +17,28 @@ $(function () {
     }
   });
 
+  //메뉴이동
+  $(".main_menu .links").click(function () {
+    var menu1 = $(".sec2").offset();
+    var menu2 = $(".sec3").offset();
+    var menu3 = $(".sec4").offset();
+    var menu4 = $(".sec5").offset();
+
+    if ($(this).text() == "ABOUT") {
+      console.log(menu1);
+      $("body,html").animate({ scrollTop: menu1.top - 80 }, 400);
+    }
+    if ($(this).text() == "CERTIFICATION") {
+      $("body,html").animate({ scrollTop: menu2.top - 80 }, 400);
+    }
+    if ($(this).text() == "COMMENT") {
+      $("body,html").animate({ scrollTop: menu3.top - 80 }, 400);
+    }
+    if ($(this).text() == "HERE") {
+      $("body,html").animate({ scrollTop: menu4.top - 80 }, 400);
+    }
+  });
+
   //main slide
   $(".slider_gallery").slick({
     dots: true,
