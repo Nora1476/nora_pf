@@ -7,7 +7,7 @@
     <meta name="keyword" content="nora, pf, front-end, developer" />
     <meta name="description" content="nora_pf" />
     <meta name="author" content="nora" />
-    <title>Document</title>
+    <title>Nora's</title>
 
     <!-- google icon -->
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
@@ -120,8 +120,11 @@
               <li class="gallery_sizer"></li>
               <!-- <li class="gallery_item"></li> -->
             </ul>
-            <button class="load_more" id="load_more">Load more</button>
 
+            <div class="btn_wrap">
+              <button class="load_more" id="load_more">Load more</button>
+              <button class="move_page" id="move_page">Go Gallery</button>
+            </div>
             <div id="lightbox" class="hide">
               <span class="close">&times;</span>
               <img id="lightbox_img" src="" alt="Lightbox Image" />
@@ -152,22 +155,16 @@
                 </div>
               </div>
               <div class="row">
-                <span class="con">임대차계약</span>
+                <span class="con">관계</span>
                 <div class="con_con">
-                  <label class="radio_inline"> <input type="radio" name="lease_agreement" id="lease_agreement" value="유" /> 유 </label>
-                  <label class="radio_inline"> <input type="radio" name="lease_agreement" id="lease_agreement" value="무" /> 무 </label>
-                </div>
-              </div>
-              <div class="row">
-                <span class="con">유형</span>
-                <div class="con_con">
-                  <label class="radio_inline"> <input type="radio" name="type" id="type" value="자가" /> 자가 </label>
-                  <label class="radio_inline"> <input type="radio" name="type" id="type" value="전세" /> 전세 </label>
-                  <label class="radio_inline"> <input type="radio" name="type" id="type" value="임대" /> 임대 </label>
+                  <label class="radio_inline"> <input type="radio" name="type" id="type" value="친구" /> 친구 </label>
+                  <label class="radio_inline"> <input type="radio" name="type" id="type" value="동료" /> 회사동료 </label>
+                  <label class="radio_inline"> <input type="radio" name="type" id="type" value="친척" /> 가족/친척 </label>
+                  <label class="radio_inline"> <input type="radio" name="type" id="type" value="기타" /> 기타 </label>
                 </div>
               </div>
               <div class="row contact">
-                <span class="con">문의내용</span>
+                <span class="con">전할내용</span>
                 <div class="con_con">
                   <textarea name="" id="" rows="6"> </textarea>
                 </div>
@@ -180,6 +177,7 @@
             </form>
           </div>
         </div>
+
         <div class="sec sec5">
           <div class="sec_inner">
             <div class="tit_wrap"><h2>HERE</h2></div>
