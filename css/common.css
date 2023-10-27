@@ -8,7 +8,7 @@ body {
 }
 #wrap {
   min-height: 100vh;
-  min-width: 1600px;
+  min-width: 1200px;
 }
 .btn {
   cursor: pointer;
@@ -214,9 +214,9 @@ footer {
   background-color: #1a1a1a;
 }
 footer > .inner {
-  width: 1300px;
+  min-width: 1200px;
   margin: auto;
-  padding: 80px 0;
+  padding: 80px 40px;
   display: flex;
   justify-content: space-between;
 }

@@ -115,14 +115,16 @@ $(function () {
   }
 
   //갤러리 이미지 light box
-  $(".galler .gallery_item").click(function () {
-    console.log("클릭");
-    // const imageSrc = $(this).attr("data");
-    // $("#lightbox-img").attr("src", imageSrc);
-    // $("#lightbox").removeClass("hide");
+  $(document).on("click", ".gallery_item img", function () {
+    const imageSrc = $(this).attr("src");
+    console.log(imageSrc);
+    $("#lightbox_img").attr("src", imageSrc);
+    $("#lightbox").removeClass("hide");
+    $("body").css("overflow", "hidden");
   });
   $("#lightbox .close").click(function () {
     $("#lightbox").addClass("hide");
+    $("body").css("overflow", "auto");
   });
 
   //video Ratio
