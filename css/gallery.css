@@ -1,0 +1,49 @@
+.sec1 .sec_inner {
+  padding: 60px 0;
+}
+.sec1 .sec_inner .map {
+  padding: 0 60px;
+}
+.sec1 .sec_inner .map > h4 {
+  color: #000000;
+  margin: 10px 0 6px 0;
+  font-weight: 500;
+  font-size: 24px;
+  letter-spacing: 1px;
+}
+
+.sec2 .sec_inner {
+  display: flex;
+  flex-direction: column;
+  padding: 0 60px;
+}
+.sec2 #btnFilter {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 16px;
+  font-size: 20px;
+}
+.sec2 #btnFilter > button {
+  background-color: #ffffff;
+  border: 1px solid #3f444a;
+  color: #3f444a;
+  cursor: pointer;
+  padding: 12px;
+}
+
+.sec2 .img_row {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 20px;
+  padding-top: 60px;
+}
+.sec2 .img_row > li.column {
+  width: calc(100% / 3 - 20px);
+}
+.sec2 .show {
+  display: block;
+}

@@ -151,4 +151,51 @@ $(function () {
     $("header .mo_ver .main_menu").removeClass("on");
     $("body").css("overflow", "auto");
   });
+
+  //gallery 그룹필터링
+  filterSelection("all");
+  function filterSelection(c) {
+    var x, i;
+    x = $(".column");
+    if (c == "all") c = "";
+    // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+    for (i = 0; i < x.length; i++) {
+      removefilter(x[i], "show");
+      if (x[i].className.indexOf(c) > -1) addFilter(x[i], "show");
+    }
+  }
+  // 그룹 이미지 보이기
+  function addFilter(element, name) {
+    var i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+      if (arr1.indexOf(arr2[i]) == -1) {
+        element.className += " " + arr2[i];
+      }
+    }
+  }
+  // 그룹 외 이미지 숨기기
+  function removefilter(element, name) {
+    var i, arr1, arr2;
+    arr1 = element.className.split(" ");
+    arr2 = name.split(" ");
+    for (i = 0; i < arr2.length; i++) {
+      while (arr1.indexOf(arr2[i]) > -1) {
+        arr1.splice(arr1.indexOf(arr2[i]), 1);
+      }
+    }
+    element.className = arr1.join(" ");
+  }
+
+  //현재 버튼에 avtive
+  var btnContainer = $("#btnFilter");
+  var btns = btnContainer.find(".btn");
+  for (var i = 0; i < btns.length; i++) {
+    btns[i].click(function () {
+      var current = $(".active");
+      current[0].attr("class", "");
+      $(this).removeClass(".active");
+    });
+  }
 });

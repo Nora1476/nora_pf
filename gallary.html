@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="./css/aos.css" />
 
     <link rel="stylesheet" href="./css/common.css" />
-    <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="./css/gallery.css" />
   </head>
   <body>
     <div id="wrap">
@@ -58,17 +58,85 @@
       </header>
 
       <main>
-        <br />
-        <br />
-        <br />
+        <div class="sec sec1" id="sec1">
+          <div class="sec_inner">
+            <div class="map">
+              <h4>Certificate Portfolio</h4>
+            </div>
+          </div>
+        </div>
 
-        gallery
+        <div class="sec sec2" id="sec2">
+          <div class="sec_inner">
+            <div id="btnFilter">
+              <button class="btn active" onclick="filterSelection('all')">Show all</button>
+              <button class="btn" onclick="filterSelection('development')">Development</button>
+              <button class="btn" onclick="filterSelection('language')">Language</button>
+              <button class="btn" onclick="filterSelection('others')">Others</button>
+            </div>
 
-        <br />
-        <br />
-        <br />
-        <br />
-        <br />
+            <!-- Portfolio Gallery Grid -->
+            <ul class="img_row">
+              <li class="column development">
+                <div class="content">
+                  <img src="/img/tempt/01.jpg" alt="development" style="width: 100%" />
+                  <h4>Mountains</h4>
+                  <p>Lorem ipsum dolor..</p>
+                </div>
+              </li>
+              <li class="column language">
+                <div class="content">
+                  <img src="/img/tempt/02.jpg" alt="language" style="width: 100%" />
+                  <h4>Lights</h4>
+                  <p>Lorem ipsum dolor..</p>
+                </div>
+              </li>
+              <li class="column development">
+                <div class="content">
+                  <img src="/img/tempt/03.jpg" alt="development" style="width: 100%" />
+                  <h4>Forest</h4>
+                  <p>Lorem ipsum dolor..</p>
+                </div>
+              </li>
+              <li class="column language">
+                <div class="content">
+                  <img src="/img/tempt/04.jpg" alt="language" style="width: 100%" />
+                  <h4>Retro</h4>
+                  <p>Lorem ipsum dolor..</p>
+                </div>
+              </li>
+              <li class="column development">
+                <div class="content">
+                  <img src="/img/tempt/05.jpg" alt="development" style="width: 100%" />
+                  <h4>Fast</h4>
+                  <p>Lorem ipsum dolor..</p>
+                </div>
+              </li>
+              <li class="column language">
+                <div class="content">
+                  <img src="/img/tempt/06.jpg" alt="language" style="width: 100%" />
+                  <h4>Classic</h4>
+                  <p>Lorem ipsum dolor..</p>
+                </div>
+              </li>
+              <li class="column others">
+                <div class="content">
+                  <img src="/img/tempt/07.jpg" alt="others" style="width: 100%" />
+                  <h4>Girl</h4>
+                  <p>Lorem ipsum dolor..</p>
+                </div>
+              </li>
+              <li class="column others">
+                <div class="content">
+                  <img src="/img/tempt/08.jpg" alt="others" style="width: 100%" />
+                  <h4>Woman</h4>
+                  <p>Lorem ipsum dolor..</p>
+                </div>
+              </li>
+              <!-- END GRID -->
+            </ul>
+          </div>
+        </div>
       </main>
 
       <div id="toTop">
