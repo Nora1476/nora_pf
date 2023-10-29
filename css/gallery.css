@@ -2,6 +2,8 @@
   padding: 60px 0;
 }
 .sec1 .sec_inner .map {
+  max-width: 1600px;
+  margin: 0 auto;
   padding: 0 60px;
 }
 .sec1 .sec_inner .map > h4 {
@@ -32,7 +34,11 @@
   cursor: pointer;
   padding: 12px;
 }
-
+.sec2 #btnFilter > button.active {
+  background-color: #3f444a;
+  color: #fff;
+  border: 1px solid #3f444a;
+}
 .sec2 .img_row {
   width: 100%;
   display: flex;
@@ -46,4 +52,7 @@
 }
 .sec2 .show {
   display: block;
+}
+.sec2 .hide {
+  display: none;
 }
