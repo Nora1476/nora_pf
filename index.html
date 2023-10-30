@@ -123,7 +123,7 @@
 
             <div class="btn_wrap">
               <button class="load_more" id="load_more">Load more</button>
-              <button class="move_page" id="move_page">Go Gallery</button>
+              <button class="move_page" id="move_page" onclick="goGallery()">Go Gallery</button>
             </div>
             <div id="lightbox" class="hide">
               <span class="close">&times;</span>
@@ -177,7 +177,7 @@
             </form>
           </div>
         </div>
-        
+
         <div class="sec sec5">
           <div class="sec_inner">
             <div class="tit_wrap"><h2>HERE</h2></div>
@@ -191,7 +191,8 @@
                 <p>몇년만 지내다가 옮겨갈 예정으로 한 공사이지만, 더 있고 싶을 정도로 모든 가족들의 만족도가 높습니다. 제가 느낀 점은 다른 분들께도 자신있게 추천해드릴 수 있다입니다. 고민 되시는 분들께서는 한번 만나 뵙고 이야기를.....</p>
               </div>
               <div class="r2">
-                <iframe src="https://www.youtube.com/embed/kVxTrhojpFI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                <div id="map"></div>
+                <!-- <iframe src="https://www.youtube.com/embed/kVxTrhojpFI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe> -->
               </div>
             </div>
           </div>
@@ -248,5 +249,21 @@
     <script type="text/javascript" src="./js/vendor/jquery.fitvids.js"></script>
 
     <script src="/js/script.js"></script>
+    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=f2613f6bb643b7ca3a612fa8a63fb480"></script>
+
+    <script>
+      var mapContainer = document.getElementById("map"),
+        mapOption = {
+          center: new kakao.maps.LatLng(35.1458264, 129.0596997),
+          level: 2, //확대 레벨
+        };
+
+      var markerPosition = new kakao.maps.LatLng(35.1458264, 129.0596997); // 마커가 표시될 위치
+      var marker = new kakao.maps.Marker({
+        position: markerPosition,
+      }); // 마커를 생성
+      var map = new kakao.maps.Map(mapContainer, mapOption);
+      marker.setMap(map);
+    </script>
   </body>
 </html>

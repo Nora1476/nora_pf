@@ -162,6 +162,11 @@ $(function () {
   });
 });
 
+function goGallery() {
+  var targetURL = "/gallary.html";
+  window.location.href = targetURL;
+}
+
 function filterSelection(name) {
   var $col = $(".column");
   if (name == "all") {
