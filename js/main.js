@@ -31,16 +31,14 @@ $(function () {
     var db_phone = NumReplace($("#phone").val());
     var formData = $("#commentFrm").serializeArray();
     var db_data = changeSerialize(formData, "phone", db_phone);
-    console.log(db_data);
 
     $.ajax({
-      url: "crud/comment_insert.php",
+      url: "./crud/comment_insert.php",
       type: "POST",
       data: db_data,
       success: function (data) {
         alert("성공적으로 등록되었습니다.");
         $("form").each(function () {
-          //form 리셋
           this.reset();
         });
       },

@@ -1,8 +1,8 @@
 <?php
 
-	/* db 접속 */
-  $servername = "nora.dothome.co.kr/myadmin";
-  $user = "nora ";
+/* db 접속 */
+  $servername = "localhost";
+  $user = "nora";
   $password = "qm8046qm!";
   $dbname = "nora";
   
@@ -11,6 +11,6 @@
   
   if ($conn->connect_error) {
 	die("Connection failed: " . $conn->connect_error);
-	}
+	} 
   
   ?>
