@@ -1,0 +1,52 @@
+.admin_sec .sec_inner {
+  width: 100vw;
+  height: 100vh;
+  background: rgb(253, 159, 45);
+  background: linear-gradient(0deg, rgba(253, 159, 45, 0.8242114223329361) 0%, rgba(114, 34, 195, 1) 100%);
+}
+.content {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+#loginFrm {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+#loginFrm .con {
+  position: relative;
+  min-width: 300px;
+  height: 40px;
+  border-radius: 4px;
+  overflow: hidden;
+}
+#loginFrm .con > input {
+  width: 100%;
+  height: 100%;
+  text-indent: 48px;
+  backdrop-filter: blur(30px);
+}
+#loginFrm .con > span {
+  width: 40px;
+  height: 100%;
+  display: inline-block;
+  padding: 8px;
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  transform: translateY(-50%);
+  background: #efefef;
+}
+.material-symbols-outlined {
+  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+}
+#loginFrm .submit {
+  background-color: #ffffff;
+  opacity: 0.7;
+  backdrop-filter: blur(40px);
+}

@@ -102,3 +102,11 @@
   padding-bottom: 8px;
   border-bottom: 1px solid #3f444a;
 }
+.sec3 .tit::after {
+  content: "";
+  display: block;
+  width: 30px;
+  height: 3px;
+  background-color: #32c5d2;
+  margin: 20px 0;
+}
