@@ -29,18 +29,18 @@
           <div class="sec_inner">
             <div class="content">
               <div class="img_wrap">
-                <span class="material-symbols-outlined"> account_circle </span>
+                <h4>관리자페이지 로그인</h4>
               </div>
               <form id="loginFrm" method="post" data-aos="fade-up">
                 <div class="row">
                   <div class="con">
-                    <input type="text" id="id" name="id" />
+                    <input type="text" id="id" name="id" onfocus="this.placeholder=''" onblur="this.placeholder='아이디'" placeholder="아이디" />
                     <span class="material-symbols-outlined"> person </span>
                   </div>
                 </div>
                 <div class="row">
                   <div class="con">
-                    <input type="passowrd" id="passowrd" name="passowrd" />
+                    <input type="passowrd" id="passowrd" name="passowrd" onfocus="this.placeholder=''" onblur="this.placeholder='****'" placeholder="****" />
                     <span class="material-symbols-outlined"> lock </span>
                   </div>
                 </div>
