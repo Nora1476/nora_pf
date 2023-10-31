@@ -56,3 +56,49 @@
 .sec2 .hide {
   display: none;
 }
+
+.sec3 .img_wrap {
+  width: 100%;
+}
+.sec3 .img_wrap > img {
+  width: 100%;
+  object-fit: cover;
+}
+.sec3 .con_wrap {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex;
+  margin-top: 20px;
+}
+.sec3 .con_wrap > div {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+.sec3 .con_wrap > div .tit {
+  font-size: 26px;
+}
+.sec3 .con_wrap > div .con {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 20px;
+}
+.sec3 .con_wrap .left {
+  width: 65%;
+}
+.sec3 .con_wrap .left .con {
+  font-size: 28px;
+}
+.sec3 .con_wrap .right {
+  width: 35%;
+}
+.sec3 .con_wrap .right .con > li {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #3f444a;
+}
