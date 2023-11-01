@@ -33,10 +33,10 @@
 
               <div class="gnb pc_ver">
                 <ul class="main_menu">
-                  <li class="links">ABOUT</li>
-                  <li class="links">CERTIFICATION</li>
-                  <li class="links">COMMENT</li>
-                  <li class="links">HERE</li>
+                  <li class="links"><a href="./index.php#about">ABOUT</a></li>
+                  <li class="links"><a href="./index.php#certi">CERTIFICATION</a></li>
+                  <li class="links"><a href="./index.php#comment">COMMENT</a></li>
+                  <li class="links"><a href="./index.php#here">HERE</a></li>
                 </ul>
               </div>
 
@@ -46,10 +46,10 @@
                   <li class="top">
                     <div><span class="material-symbols-outlined btn_close"> close </span></div>
                   </li>
-                  <li class="links">ABOUT</li>
-                  <li class="links">CERTIFICATION</li>
-                  <li class="links">COMMENT</li>
-                  <li class="links">HERE</li>
+                  <li class="links"><a href="./index.php#about">ABOUT</a></li>
+                  <li class="links"><a href="./index.php#certi">CERTIFICATION</a></li>
+                  <li class="links"><a href="./index.php#comment">COMMENT</a></li>
+                  <li class="links"><a href="./index.php#here">HERE</a></li>
                 </ul>
               </div>
             </div>
@@ -59,83 +59,44 @@
 
       <main>
         <div class="inner">
-          <div class="sec sec1" id="sec1">
+          <div class="sec gal1" id="gal1">
             <div class="sec_inner">
               <div class="map">
-                <h4>Certificate Portfolio</h4>
+                <h4>Certificate Portfolio > Detail</h4>
               </div>
             </div>
           </div>
 
-          <div class="sec sec2" id="sec2">
+          <div class="sec gal3" id="sec3">
             <div class="sec_inner">
-              <div id="btnFilter">
-                <button class="btn active" onclick="filterSelection('all')">All</button>
-                <button class="btn" onclick="filterSelection('development')">Development</button>
-                <button class="btn" onclick="filterSelection('language')">Language</button>
-                <button class="btn" onclick="filterSelection('others')">Others</button>
+              <div class="img_wrap">
+                <img src="/img/tempt/06.jpg" alt="" />
               </div>
-
-              <!-- Portfolio Gallery Grid -->
-              <ul class="img_row">
-                <li class="column development">
-                  <div class="content">
-                    <img src="/img/tempt/01.jpg" alt="development" style="width: 100%" />
-                    <h4>Mountains</h4>
-                    <p>Lorem ipsum dolor..</p>
-                  </div>
-                </li>
-                <li class="column language">
-                  <div class="content">
-                    <img src="/img/tempt/02.jpg" alt="language" style="width: 100%" />
-                    <h4>Lights</h4>
-                    <p>Lorem ipsum dolor..</p>
-                  </div>
-                </li>
-                <li class="column development">
-                  <div class="content">
-                    <img src="/img/tempt/03.jpg" alt="development" style="width: 100%" />
-                    <h4>Forest</h4>
-                    <p>Lorem ipsum dolor..</p>
-                  </div>
-                </li>
-                <li class="column language">
-                  <div class="content">
-                    <img src="/img/tempt/04.jpg" alt="language" style="width: 100%" />
-                    <h4>Retro</h4>
-                    <p>Lorem ipsum dolor..</p>
-                  </div>
-                </li>
-                <li class="column development">
-                  <div class="content">
-                    <img src="/img/tempt/05.jpg" alt="development" style="width: 100%" />
-                    <h4>Fast</h4>
-                    <p>Lorem ipsum dolor..</p>
-                  </div>
-                </li>
-                <li class="column language">
-                  <div class="content">
-                    <img src="/img/tempt/06.jpg" alt="language" style="width: 100%" />
-                    <h4>Classic</h4>
-                    <p>Lorem ipsum dolor..</p>
-                  </div>
-                </li>
-                <li class="column others">
-                  <div class="content">
-                    <img src="/img/tempt/07.jpg" alt="others" style="width: 100%" />
-                    <h4>Girl</h4>
-                    <p>Lorem ipsum dolor..</p>
-                  </div>
-                </li>
-                <li class="column others">
-                  <div class="content">
-                    <img src="/img/tempt/08.jpg" alt="others" style="width: 100%" />
-                    <h4>Woman</h4>
-                    <p>Lorem ipsum dolor..</p>
-                  </div>
-                </li>
-                <!-- END GRID -->
-              </ul>
+              <div class="con_wrap">
+                <div class="left">
+                  <h3 class="tit">The name of certification</h3>
+                  <ul class="con">
+                    <li>정보처리기사(필기합격)</li>
+                  </ul>
+                </div>
+                <div class="right">
+                  <h4 class="tit">Detail</h4>
+                  <ul class="con">
+                    <li>
+                      <div class="subtit">취득일자</div>
+                      <div class="subcon">2023.07.18</div>
+                    </li>
+                    <li>
+                      <div class="subtit">발행기관</div>
+                      <div class="subcon">Qnet</div>
+                    </li>
+                    <li>
+                      <div class="subtit">기타내용</div>
+                      <div class="subcon">Qnet</div>
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -190,9 +151,6 @@
     <!-- fivids vedioRatio -->
     <script type="text/javascript" src="./js/vendor/jquery.fitvids.js"></script>
 
-    <script src="/js/script.js"></script>
-    <script>
-      $(function () {});
-    </script>
+    <script src="/js/common.js"></script>
   </body>
 </html>

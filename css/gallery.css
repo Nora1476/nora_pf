@@ -1,12 +1,12 @@
-.sec1 .sec_inner {
+.gal1 .sec_inner {
   padding: 60px 0;
 }
-.sec1 .sec_inner .map {
+.gal1 .sec_inner .map {
   max-width: 1600px;
   margin: 0 auto;
   padding: 0 60px;
 }
-.sec1 .sec_inner .map > h4 {
+.gal1 .sec_inner .map > h4 {
   color: #000000;
   margin: 10px 0 6px 0;
   font-weight: 500;
@@ -14,12 +14,12 @@
   letter-spacing: 1px;
 }
 
-.sec2 .sec_inner {
+.gal2 .sec_inner {
   display: flex;
   flex-direction: column;
   padding: 0 60px;
 }
-.sec2 #btnFilter {
+.gal2 #btnFilter {
   width: 100%;
   display: flex;
   align-items: center;
@@ -27,19 +27,19 @@
   gap: 16px;
   font-size: 20px;
 }
-.sec2 #btnFilter > button {
+.gal2 #btnFilter > button {
   background-color: #ffffff;
   border: 1px solid #3f444a;
   color: #3f444a;
   cursor: pointer;
   padding: 12px;
 }
-.sec2 #btnFilter > button.active {
+.gal2 #btnFilter > button.active {
   background-color: #3f444a;
   color: #fff;
   border: 1px solid #3f444a;
 }
-.sec2 .img_row {
+.gal2 .img_row {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -47,54 +47,54 @@
   gap: 20px;
   padding-top: 60px;
 }
-.sec2 .img_row > li.column {
+.gal2 .img_row > li.column {
   width: calc(100% / 3 - 20px);
 }
-.sec2 .show {
+.gal2 .show {
   display: block;
 }
-.sec2 .hide {
+.gal2 .hide {
   display: none;
 }
 
-.sec3 .img_wrap {
+.gal3 .img_wrap {
   width: 100%;
 }
-.sec3 .img_wrap > img {
+.gal3 .img_wrap > img {
   width: 100%;
   object-fit: cover;
 }
-.sec3 .con_wrap {
+.gal3 .con_wrap {
   width: 100%;
   display: flex;
   justify-content: center;
   align-items: flex;
   margin-top: 20px;
 }
-.sec3 .con_wrap > div {
+.gal3 .con_wrap > div {
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
-.sec3 .con_wrap > div .tit {
+.gal3 .con_wrap > div .tit {
   font-size: 26px;
 }
-.sec3 .con_wrap > div .con {
+.gal3 .con_wrap > div .con {
   display: flex;
   flex-direction: column;
   gap: 10px;
   font-size: 20px;
 }
-.sec3 .con_wrap .left {
+.gal3 .con_wrap .left {
   width: 65%;
 }
-.sec3 .con_wrap .left .con {
+.gal3 .con_wrap .left .con {
   font-size: 28px;
 }
-.sec3 .con_wrap .right {
+.gal3 .con_wrap .right {
   width: 35%;
 }
-.sec3 .con_wrap .right .con > li {
+.gal3 .con_wrap .right .con > li {
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -102,7 +102,7 @@
   padding-bottom: 8px;
   border-bottom: 1px solid #3f444a;
 }
-.sec3 .tit::after {
+.gal3 .tit::after {
   content: "";
   display: block;
   width: 30px;

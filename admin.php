@@ -78,7 +78,7 @@
   <!-- fivids vedioRatio -->
   <script type="text/javascript" src="./js/vendor/jquery.fitvids.js"></script>
 
-  <script src="/js/script.js"></script>
+  <script src="/js/common.js"></script>
   <script src="/js/main.js"></script>
 
 </body>
