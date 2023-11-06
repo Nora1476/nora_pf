@@ -35,6 +35,10 @@
   <!-- aos scroll -->
   <link rel="stylesheet" href="./css/aos.css" />
 
+  <!--  bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
+
+
   <link rel="stylesheet" href="./css/common.css" />
   <link rel="stylesheet" href="./css/admin.css" />
 
@@ -57,7 +61,8 @@
               <ul class="main_menu">
                 <li class="links">CERTIFICATION</li>
                 <li class="links">COMMENT</li>
-                <li class="links">LogOut</li>
+                <li class="links"><a href='./admin_pw.php'>ChangePW</a></li>
+                <li class="links"><a href='./crud/admin_logout.php'>Logout</a></li>
               </ul>
             </div>
 
@@ -69,7 +74,8 @@
                 </li>
                 <li class="links">CERTIFICATION</li>
                 <li class="links">COMMENT</li>
-                <li class="links">LogOut</li>
+                <li class="links"><a href='./admin_pw.php' class="links">Change&nbsp;PW</a></li>
+                <li class="links"><a href='./crud/admin_logout.php' class="c-link">Logout</a></li>
               </ul>
             </div>
           </div>
@@ -107,7 +113,7 @@
                   <th>등록일자</th>
                 </tr>
               </thead>
-              <tfoot>
+              <!-- <tfoot>
                 <tr>
                   <th>ID</th>
                   <th>이름</th>
@@ -117,57 +123,136 @@
                   <th>내용</th>
                   <th>등록일자</th>
                 </tr>
-              </tfoot>
+              </tfoot> -->
             </table>
           </div>
         </div>
       </div>
+
+
+      <!-- Comment Modal -->
+      <div class="modal fade" id="modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">Comment 수정 및 삭제</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form>
+                <input type="text" class="form-control c-square" id="id" name="id" style="display:none;">
+                <div class="form-group">
+                  <label for="name" class="control-label">성함 ::</label>
+                  <input type="text" class="form-control c-square" id="name" name="name">
+                </div>
+                <div class="form-group">
+                  <label for="phone" class="control-label">연락처 ::</label>
+                  <input type="text" class="form-control c-square" id="phone" name="phone">
+                </div>
+                <div class="form-group">
+                  <label for="email" class="control-label">이메일 ::</label>
+                  <input type="text" class="form-control c-square" id="email" name="email">
+                </div>
+                <div class="form-group">
+                  <label for="type" class="control-label">관계 ::</label>
+                  <input type="text" class="form-control c-square" id="type" name="type">
+                </div>
+                <div class="form-group">
+                  <label for="content" class="control-label">내용 ::</label>
+                  <textarea class="form-control  c-square" id="content" name="content"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="created" class="control-label">등록일자 ::</label>
+                  <input type="text" class="form-control c-square" id="created" name="created" readonly>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="btnModi" class="btn c-btn-dark c-btn-square c-btn-bold c-btn-uppercase"
+                style="margin-right:5px;">Modify</button>
+              <button type="button" id="btnDel" data-target="#del_alert"
+                class="btn c-btn-yellow-2 c-btn-square c-btn-bold c-btn-uppercase">Delete</button>
+              <button type="button" class="btn c-btn-dark c-btn-border-2x c-btn-square c-btn-bold c-btn-uppercase"
+                data-dismiss="modal">Close</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Delete Alert Modal -->
+      <div class="modal" tabindex="-1" id="del_alert">
+        <div class=" modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Modal title</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>삭제하시겠습니까?</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
+              <button type="button" class="btn btn-primary " id="del_act">Delete</button>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
+    <div id="toTop">
+      <img src="./img/icon/i_arrow_top.png" alt="top" />
+      TOP
+    </div>
+
+    <footer>
+      <div class="inner">
+        <div class="main_area">
+          <h4>Nora</h4>
+          <ul class="com_info">
+            <li>이름 : 조봉희</li>
+            <li>e-mail : nada70979@gmail.com</li>
+            <li>연락처 : 010-7166-1476</li>
+            <li>주소 : 부산광역시 부산진구 범일로 176</li>
+            <li class="hr">
+              <hr />
+            </li>
+            <li class="copyright">COPYRIGHTⓒ 2023</li>
+          </ul>
+        </div>
+        <div class="social_area">
+          <div class="s1">
+            <a href=""><img src="./img/icon/i_youtube.png" alt="youtube" /></a>
+          </div>
+          <div class="s2">
+            <a href=""><img src="./img/icon/i_instagram.png" alt="i_instagram" /></a>
+          </div>
+        </div>
+      </div>
+    </footer>
   </div>
 
   <!-- jquery -->
   <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
   <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-
   <!-- gallery mansonry -->
   <script src="./js/vendor/modernizr.custom.min.js"></script>
   <script src="./js/vendor/jquery-1.10.2.min.js"></script>
   <script src="./js/vendor/masonry.pkgd.min.js"></script>
   <script src="./js/vendor/imagesloaded.pkgd.min.js"></script>
-
   <!-- slick slide -->
   <script type="text/javascript" src="./js/slick/slick.min.js"></script>
-
   <!-- aos scroll -->
   <script type="text/javascript" src="./js/aos/aos.js"></script>
+  <!-- bootstrap -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+  </script>
 
   <!-- datatables-->
   <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
 
   <script src="/js/common.js"></script>
   <script src="/js/admin.js"></script>
-  <script>
-  $(document).ready(function() {
-    //dataTable 게시판
-    var table = $("#t_comment").DataTable({
-      processing: true,
-      serverSide: true,
-      ajax: "./crud/comment_load.php",
-      //hidden column id
-      columnDefs: [{
-        target: 0,
-        visible: false,
-      }, ],
-      order: [
-        [0, "desc"]
-      ],
 
-      search: {
-        return: true,
-      },
-    });
-  });
-  </script>
 </body>
 
 </html>

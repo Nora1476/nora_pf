@@ -108,12 +108,12 @@ $(function () {
     $("body").css("overflow", "auto");
   });
 
+  //comment 입력
   $("#commentFrm").submit(function (e) {
     //유효성 검사
     if ($("#name").val() == "") {
       alert("이름을 입력해 주세요.");
       $("#name").focus();
-      async;
       return false;
     }
     if ($("#phone").val() == "") {
@@ -147,9 +147,6 @@ $(function () {
       data: db_data,
       success: function (data) {
         alert("성공적으로 등록되었습니다.");
-        $("form").each(function () {
-          this.reset();
-        });
       },
     });
   });

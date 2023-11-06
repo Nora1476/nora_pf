@@ -4,5 +4,5 @@ session_destroy();
 ?>
 <script>
 alert("로그아웃 되었습니다.");
-location.replace('index_admin.php');
+location.replace('../admin.php');
 </script>

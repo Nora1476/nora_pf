@@ -21,16 +21,16 @@
     //결과가 존재하면 세션 생성
     if ($row != null) {
       $_SESSION['username'] = $row['admin'];
-      print_r($_SESSION);
+      // print_r($_SESSION);
       echo "<script>alert('로그인 되었습니다.')</script>";
-      echo "<script>location.replace('admin_main.php');</script>";
+      echo "<script>location.replace('../admin_index.php');</script>";
       exit;
     }
       
      //결과가 존재하지 않으면 로그인 실패
     if($row == null){
        echo "<script>alert('아이디, 패스워드가 일치하지 않습니다.')</script>";
-       echo "<script>location.replace('index_admin.php');</script>";
+       echo "<script>location.replace('../admin.php');</script>";
        exit;
     }	
 			 

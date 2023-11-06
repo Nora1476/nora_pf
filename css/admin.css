@@ -34,28 +34,28 @@
   padding: 10px;
   backdrop-filter: blur(5px);
 }
-#loginFrm {
+form {
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
-#loginFrm .con {
+form .con {
   position: relative;
   min-width: 300px;
   height: 40px;
   border-radius: 4px;
   overflow: hidden;
 }
-#loginFrm .con > input {
+form .con > input {
   width: 100%;
   height: 100%;
   text-indent: 48px;
   backdrop-filter: blur(30px);
 }
-#loginFrm .con > input::placeholder {
+form .con > input::placeholder {
   font-size: 12px;
 }
-#loginFrm .con > span {
+form .con > span {
   width: 40px;
   height: 100%;
   display: inline-block;
@@ -78,4 +78,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+}
+#t_comment tr {
+  cursor: pointer;
+}
+#modal form {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 14px;
 }
