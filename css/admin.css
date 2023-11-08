@@ -79,6 +79,11 @@ form .con > span {
   justify-content: center;
   align-items: center;
 }
+.admin1 .btn_wrap {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
 #t_comment tr {
   cursor: pointer;
 }
@@ -87,5 +92,4 @@ form .con > span {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 14px;
 }

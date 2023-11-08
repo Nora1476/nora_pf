@@ -49,6 +49,12 @@ $(function () {
   });
 });
 
+// //갤러리로 이동
+function goGallery() {
+  var targetURL = "./gallery.php";
+  window.location.href = targetURL;
+}
+
 function filterSelection(name) {
   var $col = $(".column");
   if (name == "all") {

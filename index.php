@@ -181,7 +181,7 @@
 
             <div class="row">
               <input type="submit" class="btn btn_submit" value="Submit " />
-              <input type="button" class="btn btn_cancel" value="Cancel " />
+              <!-- <input type="button" class="btn btn_cancel" value="Cancel " /> -->
             </div>
           </form>
         </div>
@@ -259,9 +259,6 @@
 
   <!-- aos scroll -->
   <script type="text/javascript" src="./js/aos/aos.js"></script>
-
-  <!-- fivids vedioRatio -->
-  <script type="text/javascript" src="./js/vendor/jquery.fitvids.js"></script>
 
   <script src="/js/common.js"></script>
   <script src="/js/main.js"></script>

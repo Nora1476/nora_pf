@@ -162,36 +162,3 @@ $(function () {
     );
   });
 });
-
-//갤러리로 이동
-function goGallery() {
-  var targetURL = "/gallary.html";
-  window.location.href = targetURL;
-}
-
-//휴대폰 번호에서 대시 ('-') 빼는 함수
-function NumReplace(val) {
-  var num = 0;
-  if (typeof val != "undefined" && val != null && val != "") {
-    num = String(val.replace(/-/gi, ""));
-  }
-  return num;
-}
-//Serialize에서 특정값 변경하는 함수
-function changeSerialize(values, k, v) {
-  var found = false;
-
-  for (i = 0; i < values.length && !found; i++) {
-    if (values[i].name == k) {
-      values[i].value = v;
-      found = true;
-    }
-  }
-  if (!found) {
-    values.push({
-      name: k,
-      value: v,
-    });
-  }
-  return values;
-}

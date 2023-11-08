@@ -29,6 +29,36 @@ $(function () {
     }
   });
 
+  //자격증 등록
+  $("#regi_pf").click(function () {
+    $("#regi_modal").modal("show").modal({
+      backdrop: "static",
+    });
+  });
+  $("#btnRegi").click(function () {
+    //유효성 검사
+    if ($("#name").val() == "") {
+      alert("자격증 이름을 입력해 주세요.");
+      $("#name").focus();
+      return false;
+    }
+    if ($("#issue").val() == "") {
+      alert("발행처를 입력해 주세요.");
+      $("#issue").focus();
+      return false;
+    }
+    if ($("#date").val() == "") {
+      alert("취득일자를 입력해 주세요.");
+      $("#date").focus();
+      return false;
+    }
+    if ($("#pf_img").val() == "") {
+      alert("이미지를 선택해 주세요.");
+      $("#pf_img").focus();
+      return false;
+    }
+  });
+
   //모달창 오픈
   $("#t_comment tbody").on("click", "tr", function (e) {
     e.preventDefault();
@@ -49,16 +79,6 @@ $(function () {
     //폰번호 자동대시('-') 삽입
     $("#phone").val(
       $("#phone")
-        .val()
-        .replace(/[^0-9]/g, "")
-        .replace(/(^02|^0505|^1[0-9]{3}|^0[0-9]{2})([0-9]+)?([0-9]{4})$/, "$1-$2-$3")
-        .replace("--", "-")
-    );
-  });
-  //휴대폰 번호 입력시  자동 대시('-') 기능
-  $(document).on("keyup", "#phone", function () {
-    $(this).val(
-      $(this)
         .val()
         .replace(/[^0-9]/g, "")
         .replace(/(^02|^0505|^1[0-9]{3}|^0[0-9]{2})([0-9]+)?([0-9]{4})$/, "$1-$2-$3")

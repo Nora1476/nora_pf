@@ -39,12 +39,11 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
 
 
-  <link rel="stylesheet" href="./css/common.css" />
-  <link rel="stylesheet" href="./css/admin.css" />
-
   <!-- datatables -->
   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
   <link href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+  <link rel="stylesheet" href="./css/common.css" />
+  <link rel="stylesheet" href="./css/admin.css" />
 </head>
 
 <body>
@@ -93,6 +92,9 @@
           <div class="tit_wrap">
             <h2>CERTIFICATION</h2>
           </div>
+          <div class="btn_wrap">
+            <button type="button" class="btn btn-primary " id="regi_pf">등록하기</button></button>
+          </div>
         </div>
       </div>
       <div class="sec admin2" id="admin2">
@@ -100,6 +102,7 @@
           <div class="tit_wrap">
             <h2>COMMENT</h2>
           </div>
+
           <div class="table_wrap">
             <table id="t_comment" class="display" style="width: 100%">
               <thead>
@@ -129,6 +132,44 @@
         </div>
       </div>
 
+      <!-- Register Modal -->
+      <div class="modal fade" id="regi_modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">자격증 등록</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form id="regiFrm" method="post" enctype="multipart/form-data">
+                <div class="form-group">
+                  <label for="name" class="control-label">자격증 ::</label>
+                  <input type="text" class="form-control c-square" id="name" name="name">
+                </div>
+                <div class="form-group">
+                  <label for="issue" class="control-label">발행처 ::</label>
+                  <input type="text" class="form-control c-square" id="issue" name="issue">
+                </div>
+                <div class="form-group">
+                  <label for="date" class="control-label">취득일자 ::</label>
+                  <input type="text" class="form-control c-square" id="date" name="date">
+                </div>
+                <div class="form-group">
+                  <label for="pf_img" class="control-label">사진등록 ::</label>
+                  <input type="file" id="pf_img" name="pf_img[]" multiple class="form-control c-square">
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="button" id="btnRegi" class="btn c-btn-dark c-btn-square c-btn-bold c-btn-uppercase"
+                style="margin-right:5px;">등록</button>
+              <button type="button" class="btn c-btn-dark c-btn-border-2x c-btn-square c-btn-bold c-btn-uppercase"
+                data-bs-dismiss="modal">취소</button>
+            </div>
+          </div>
+        </div>
+      </div>
 
       <!-- Comment Modal -->
       <div class="modal fade" id="modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
@@ -174,7 +215,7 @@
               <button type="button" id="btnDel" data-target="#del_alert"
                 class="btn c-btn-yellow-2 c-btn-square c-btn-bold c-btn-uppercase">Delete</button>
               <button type="button" class="btn c-btn-dark c-btn-border-2x c-btn-square c-btn-bold c-btn-uppercase"
-                data-dismiss="modal">Close</button>
+                data-bs-dismiss="modal">Close</button>
             </div>
           </div>
         </div>
@@ -198,6 +239,8 @@
           </div>
         </div>
       </div>
+
+
     </main>
     <div id="toTop">
       <img src="./img/icon/i_arrow_top.png" alt="top" />
@@ -234,6 +277,7 @@
   <!-- jquery -->
   <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
   <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+
   <!-- gallery mansonry -->
   <script src="./js/vendor/modernizr.custom.min.js"></script>
   <script src="./js/vendor/jquery-1.10.2.min.js"></script>
@@ -246,7 +290,6 @@
   <!-- bootstrap -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
   </script>
-
   <!-- datatables-->
   <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
 
