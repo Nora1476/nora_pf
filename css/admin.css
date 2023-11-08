@@ -83,6 +83,10 @@ form .con > span {
   display: flex;
   justify-content: flex-end;
   align-items: center;
+<<<<<<< Updated upstream
+=======
+  margin-bottom: 20px;
+>>>>>>> Stashed changes
 }
 #t_comment tr {
   cursor: pointer;

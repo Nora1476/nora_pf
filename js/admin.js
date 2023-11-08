@@ -1,14 +1,33 @@
 $(function () {
   //dataTable 게시판
+<<<<<<< Updated upstream
+=======
+  var table = $("#t_certifi").DataTable({
+    processing: true,
+    serverSide: true,
+    ajax: "./crud/pf_load.php",
+    //hidden column id
+    columnDefs: [{ target: 0, visible: true }],
+    order: [[0, "desc"]],
+    search: {
+      return: true,
+    },
+  });
+
+  //dataTable 게시판
+>>>>>>> Stashed changes
   var table = $("#t_comment").DataTable({
     processing: true,
     serverSide: true,
     ajax: "./crud/comment_load.php",
+<<<<<<< Updated upstream
     //hidden column id
     // columnDefs: [{
     //   target: 0,
     //   visible: false,
     // }, ],
+=======
+>>>>>>> Stashed changes
     order: [[0, "desc"]],
 
     search: {
@@ -35,11 +54,21 @@ $(function () {
       backdrop: "static",
     });
   });
+<<<<<<< Updated upstream
   $("#btnRegi").click(function () {
     //유효성 검사
     if ($("#name").val() == "") {
       alert("자격증 이름을 입력해 주세요.");
       $("#name").focus();
+=======
+  $("#regiFrm").submit(function () {
+    var data = new FormData(this);
+
+    //유효성 검사
+    if ($("#title").val() == "") {
+      alert("자격증 이름을 입력해 주세요.");
+      $("#title").focus();
+>>>>>>> Stashed changes
       return false;
     }
     if ($("#issue").val() == "") {
@@ -57,6 +86,21 @@ $(function () {
       $("#pf_img").focus();
       return false;
     }
+<<<<<<< Updated upstream
+=======
+
+    $.ajax({
+      url: "./crud/pf_insert.php",
+      type: "POST",
+      data: data,
+      cache: false,
+      contentType: false,
+      processData: false,
+      success: function (data) {
+        alert("성공적으로 등록되었습니다.");
+      },
+    });
+>>>>>>> Stashed changes
   });
 
   //모달창 오픈

@@ -38,10 +38,22 @@
   <!--  bootstrap -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
 
+<<<<<<< Updated upstream
 
   <!-- datatables -->
   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
   <link href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+=======
+  <!-- datatables -->
+  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
+  <link href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
+
+  <!-- datepicker -->
+  <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+  <link rel="stylesheet" href="/resources/demos/style.css">
+
+
+>>>>>>> Stashed changes
   <link rel="stylesheet" href="./css/common.css" />
   <link rel="stylesheet" href="./css/admin.css" />
 </head>
@@ -95,6 +107,34 @@
           <div class="btn_wrap">
             <button type="button" class="btn btn-primary " id="regi_pf">등록하기</button></button>
           </div>
+<<<<<<< Updated upstream
+=======
+
+          <div class="table_wrap">
+            <table id="t_certifi" class="display" style="width: 100%">
+              <thead>
+                <tr>
+                  <th>No</th>
+                  <th>자격증</th>
+                  <th>발행처</th>
+                  <th>취득일자</th>
+                  <th>이미지</th>
+                  <th>등록일자</th>
+                </tr>
+              </thead>
+              <!-- <tfoot>
+                <tr>
+                  <th>No</th>
+                  <th>자격증</th>
+                  <th>발행처</th>
+                  <th>취득일자</th>
+                  <th>이미지</th>
+                  <th>등록일자</th>
+                </tr>
+              </tfoot> -->
+            </table>
+          </div>
+>>>>>>> Stashed changes
         </div>
       </div>
       <div class="sec admin2" id="admin2">
@@ -144,8 +184,13 @@
             <div class="modal-body">
               <form id="regiFrm" method="post" enctype="multipart/form-data">
                 <div class="form-group">
+<<<<<<< Updated upstream
                   <label for="name" class="control-label">자격증 ::</label>
                   <input type="text" class="form-control c-square" id="name" name="name">
+=======
+                  <label for="title" class="control-label">자격증 ::</label>
+                  <input type="text" class="form-control c-square" id="title" name="title">
+>>>>>>> Stashed changes
                 </div>
                 <div class="form-group">
                   <label for="issue" class="control-label">발행처 ::</label>
@@ -157,13 +202,23 @@
                 </div>
                 <div class="form-group">
                   <label for="pf_img" class="control-label">사진등록 ::</label>
+<<<<<<< Updated upstream
                   <input type="file" id="pf_img" name="pf_img[]" multiple class="form-control c-square">
+=======
+                  <input type="file" id="pf_img" name="pf_img[]" accept=".jpg, .png, .gif" multiple
+                    class="form-control c-square">
+>>>>>>> Stashed changes
                 </div>
               </form>
             </div>
             <div class="modal-footer">
+<<<<<<< Updated upstream
               <button type="button" id="btnRegi" class="btn c-btn-dark c-btn-square c-btn-bold c-btn-uppercase"
                 style="margin-right:5px;">등록</button>
+=======
+              <button type="submit" form="regiFrm" id="btnRegi"
+                class="btn c-btn-dark c-btn-square c-btn-bold c-btn-uppercase" style="margin-right:5px;">등록</button>
+>>>>>>> Stashed changes
               <button type="button" class="btn c-btn-dark c-btn-border-2x c-btn-square c-btn-bold c-btn-uppercase"
                 data-bs-dismiss="modal">취소</button>
             </div>
@@ -274,10 +329,19 @@
     </footer>
   </div>
 
+<<<<<<< Updated upstream
   <!-- jquery -->
   <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
   <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
 
+=======
+  <!-- bootstrap -->
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
+  </script>
+  <!-- jquery -->
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
+  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
+>>>>>>> Stashed changes
   <!-- gallery mansonry -->
   <script src="./js/vendor/modernizr.custom.min.js"></script>
   <script src="./js/vendor/jquery-1.10.2.min.js"></script>
@@ -287,6 +351,7 @@
   <script type="text/javascript" src="./js/slick/slick.min.js"></script>
   <!-- aos scroll -->
   <script type="text/javascript" src="./js/aos/aos.js"></script>
+<<<<<<< Updated upstream
   <!-- bootstrap -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
   </script>
@@ -296,6 +361,31 @@
   <script src="/js/common.js"></script>
   <script src="/js/admin.js"></script>
 
+=======
+  <!-- datatables-->
+  <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
+  <!-- jquery UI -->
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+
+  <script src="/js/common.js"></script>
+  <script src="/js/admin.js"></script>
+  <script>
+  $(function() {
+    $("#date").datepicker({
+      dateFormat: "yy-mm-dd", // 텍스트 필드에 입력되는 날짜 형식.
+      changeMonth: true, // 월 셀렉트 박스
+      changeYear: true, // 년 셀렉트 박스
+      nextText: '다음 달', // next 아이콘의 툴팁.
+      prevText: '이전 달', // prev 아이콘의 툴팁.
+      showMonthAfterYear: true, // 셀렉트 박스를 년,월 순으로.
+      dayNamesMin: ['월', '화', '수', '목', '금', '토', '일'], // 요일의 한글 형식.
+      monthNamesShort: ['1월', '2월', '3월', '4월', '5월', '6월', '7월', '8월', '9월', '10월', '11월', '12월'], // 월의 한글 형식.
+      showAnim: "slide", //애니메이션을 적용
+      currentText: '오늘 날짜'
+    });
+  });
+  </script>
+>>>>>>> Stashed changes
 </body>
 
 </html>
