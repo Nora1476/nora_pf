@@ -38,12 +38,6 @@
   <!--  bootstrap -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" />
 
-<<<<<<< Updated upstream
-
-  <!-- datatables -->
-  <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
-  <link href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
-=======
   <!-- datatables -->
   <script src="https://code.jquery.com/jquery-3.5.1.js"></script>
   <link href="https://cdn.datatables.net/1.13.1/css/jquery.dataTables.min.css" rel="stylesheet" type="text/css" />
@@ -53,7 +47,6 @@
   <link rel="stylesheet" href="/resources/demos/style.css">
 
 
->>>>>>> Stashed changes
   <link rel="stylesheet" href="./css/common.css" />
   <link rel="stylesheet" href="./css/admin.css" />
 </head>
@@ -107,8 +100,6 @@
           <div class="btn_wrap">
             <button type="button" class="btn btn-primary " id="regi_pf">등록하기</button></button>
           </div>
-<<<<<<< Updated upstream
-=======
 
           <div class="table_wrap">
             <table id="t_certifi" class="display" style="width: 100%">
@@ -134,7 +125,6 @@
               </tfoot> -->
             </table>
           </div>
->>>>>>> Stashed changes
         </div>
       </div>
       <div class="sec admin2" id="admin2">
@@ -184,13 +174,8 @@
             <div class="modal-body">
               <form id="regiFrm" method="post" enctype="multipart/form-data">
                 <div class="form-group">
-<<<<<<< Updated upstream
-                  <label for="name" class="control-label">자격증 ::</label>
-                  <input type="text" class="form-control c-square" id="name" name="name">
-=======
                   <label for="title" class="control-label">자격증 ::</label>
                   <input type="text" class="form-control c-square" id="title" name="title">
->>>>>>> Stashed changes
                 </div>
                 <div class="form-group">
                   <label for="issue" class="control-label">발행처 ::</label>
@@ -202,23 +187,14 @@
                 </div>
                 <div class="form-group">
                   <label for="pf_img" class="control-label">사진등록 ::</label>
-<<<<<<< Updated upstream
-                  <input type="file" id="pf_img" name="pf_img[]" multiple class="form-control c-square">
-=======
                   <input type="file" id="pf_img" name="pf_img[]" accept=".jpg, .png, .gif" multiple
                     class="form-control c-square">
->>>>>>> Stashed changes
                 </div>
               </form>
             </div>
             <div class="modal-footer">
-<<<<<<< Updated upstream
-              <button type="button" id="btnRegi" class="btn c-btn-dark c-btn-square c-btn-bold c-btn-uppercase"
-                style="margin-right:5px;">등록</button>
-=======
               <button type="submit" form="regiFrm" id="btnRegi"
                 class="btn c-btn-dark c-btn-square c-btn-bold c-btn-uppercase" style="margin-right:5px;">등록</button>
->>>>>>> Stashed changes
               <button type="button" class="btn c-btn-dark c-btn-border-2x c-btn-square c-btn-bold c-btn-uppercase"
                 data-bs-dismiss="modal">취소</button>
             </div>
@@ -329,19 +305,12 @@
     </footer>
   </div>
 
-<<<<<<< Updated upstream
-  <!-- jquery -->
-  <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
-  <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
-
-=======
   <!-- bootstrap -->
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
   </script>
   <!-- jquery -->
   <script type="text/javascript" src="//code.jquery.com/jquery-1.11.0.min.js"></script>
   <script type="text/javascript" src="//code.jquery.com/jquery-migrate-1.2.1.min.js"></script>
->>>>>>> Stashed changes
   <!-- gallery mansonry -->
   <script src="./js/vendor/modernizr.custom.min.js"></script>
   <script src="./js/vendor/jquery-1.10.2.min.js"></script>
@@ -351,17 +320,6 @@
   <script type="text/javascript" src="./js/slick/slick.min.js"></script>
   <!-- aos scroll -->
   <script type="text/javascript" src="./js/aos/aos.js"></script>
-<<<<<<< Updated upstream
-  <!-- bootstrap -->
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js">
-  </script>
-  <!-- datatables-->
-  <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
-
-  <script src="/js/common.js"></script>
-  <script src="/js/admin.js"></script>
-
-=======
   <!-- datatables-->
   <script src="https://cdn.datatables.net/1.13.1/js/jquery.dataTables.min.js"></script>
   <!-- jquery UI -->
@@ -385,7 +343,6 @@
     });
   });
   </script>
->>>>>>> Stashed changes
 </body>
 
 </html>
