@@ -71,6 +71,17 @@ form .con > span {
 }
 
 /* admin_index */
+table tr {
+  cursor: pointer;
+}
+table.dataTable th {
+  text-align: center !important;
+}
+.dt_center {
+  text-align: center;
+  align-items: center;
+}
+
 .admin0 .sec_inner {
   width: 100vw;
   height: 100vh;
@@ -85,12 +96,53 @@ form .con > span {
   align-items: center;
   margin-bottom: 20px;
 }
-#t_comment tr {
-  cursor: pointer;
-}
+
 #modal form {
   width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+#certifi_modal .db_img {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 5px;
+}
+#certifi_modal .db_img > img {
+  width: calc(100% / 3 - 10px);
+  object-fit: contain;
+}
+
+.modal .sortable {
+  /* border: 1px solid #b2b2b2; */
+  border-radius: 8px;
+  margin-top: 8px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.modal .sortable > li {
+  margin: 6px;
+  position: relative;
+  border: none;
+}
+.modal .sortable .delBtn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 13px;
+  background-color: #000;
+  color: #fff;
+  width: 18px;
+  height: 18px;
+  line-height: 16px;
+  display: inline-block;
+  text-align: center;
+  cursor: pointer;
 }

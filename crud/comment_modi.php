@@ -8,9 +8,9 @@
  	settype( $_POST['id'], "integer");
  	
   $filtered = array(
-		'id'=>mysqli_real_escape_string($conn, $_POST['id']),
-		'name'=>mysqli_real_escape_string($conn, $_POST['name']),
-		'phone'=>mysqli_real_escape_string($conn, $_POST['phone']),
+    'id'=>mysqli_real_escape_string($conn, $_POST['id']),
+    'name'=>mysqli_real_escape_string($conn, $_POST['name']),
+    'phone'=>mysqli_real_escape_string($conn, $_POST['phone']),
 	  'email'=>mysqli_real_escape_string($conn, $_POST['email']),
 	  'type'=>mysqli_real_escape_string($conn, $_POST['type']),
 	  'content'=>mysqli_real_escape_string($conn, $_POST['content']),
@@ -23,7 +23,7 @@
   						email = '{$filtered['email']}',
   						type = '{$filtered['type']}',
   						content = '{$filtered['content']}' 
-  					where id={$filtered['id']}  						
+  					  where id={$filtered['id']}  						
   			";
   			
   $result = mysqli_query($conn, $sql);

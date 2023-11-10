@@ -2,8 +2,11 @@
 	
   /* 서버 접속 */
   require_once("./dbconfig.php");	
+
+  settype( $_POST['id'], "integer");
   
    $filtered = array(
+    'id'=>mysqli_real_escape_string($conn, $_POST['id']),
     'title'=>mysqli_real_escape_string($conn, $_POST['title']),
     'issue'=>mysqli_real_escape_string($conn, $_POST['issue']),
 		'date'=>mysqli_real_escape_string($conn, $_POST['date']),
@@ -11,22 +14,31 @@
   
 
 
-	 $sql = "
-  INSERT INTO pf_list
-    (title, issue, date, regi_date)
-    VALUES(
-      '{$filtered['title']}',
-      '{$filtered['issue']}',
-      '{$filtered['date']}',
-       NOW()
-    )";
+  $sql = " 
+					update pf_list 
+  					set
+							title = '{$filtered['title']}',
+							issue = '{$filtered['issue']}',
+  						date = '{$filtered['date']}'
+  						where no = '{$filtered['id']}'			
+  			";
 
    $result = mysqli_query($conn, $sql);
-   
-$array = print_r($_FILES);
-echo $array ;
 
- if(is_array($_FILES)) {  
+	  
+	 if($result ===false){
+		 $error = mysqli_error($conn);
+		 echo $error;
+  }
+ 
+   
+	// $array = print_r($_FILES);
+	// echo $$array;
+
+	//전역변수 선언
+	$no = $filtered['id'];
+
+	if(is_array($_FILES)) {
      
      foreach ($_FILES['pf_img']['name'] as $name => $value) {
 
@@ -45,11 +57,17 @@ echo $array ;
         
               
         if(move_uploaded_file($sourcePath, $targetPath)) {    //move_uploaded_file($file_path, $destination) 임시경로에 있는 파일을 원하는 경로로 이동
+					//전역변수 사용
+					global $no;
+
 	      	// 이미지파일 경로 db파일에 업로드
-	      	$sql = "INSERT INTO pf_img (mno, file) VALUES ((SELECT MAX(no) FROM pf_list), '$targetPath' )";
+	      	$sql = "INSERT INTO pf_img (mno, file) VALUES ($no, '$targetPath' )";
 	      	mysqli_query($conn, $sql);  
 	      }                 
       }            
     }         
  }  
+
+ mysqli_close($conn);
+ 
  ?>

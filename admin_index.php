@@ -103,6 +103,14 @@
 
           <div class="table_wrap">
             <table id="t_certifi" class="display" style="width: 100%">
+             <colgroup>
+                <col width="5%" />
+                <col width="20%" />
+                <col width="20%"  />
+                <col width="15%"  />
+                <col width="20%"  />
+                <col width="20%"  />
+            </colgroup>
               <thead>
                 <tr>
                   <th>No</th>
@@ -162,7 +170,8 @@
         </div>
       </div>
 
-      <!-- Register Modal -->
+
+      <!-- Certification Register Modal -->
       <div class="modal fade" id="regi_modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -186,9 +195,12 @@
                   <input type="text" class="form-control c-square" id="date" name="date">
                 </div>
                 <div class="form-group">
-                  <label for="pf_img" class="control-label">사진등록 ::</label>
-                  <input type="file" id="pf_img" name="pf_img[]" accept=".jpg, .png, .gif" multiple
-                    class="form-control c-square">
+                  <div class="inputFile">
+                    <label for="pf_img" class="control-label">사진등록 ::</label>
+                    <input type="file" id="pf_img" name="pf_img[]" accept=".jpg, .png, .gif" multiple class="form-control c-square">
+
+                    <ul id="Preview" class="sortable"></ul>
+                  </div>
                 </div>
               </form>
             </div>
@@ -201,6 +213,82 @@
           </div>
         </div>
       </div>
+
+    <!-- Certification Modi Modal -->
+      <div class="modal fade" id="certifi_modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+        aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="staticBackdropLabel">자격증 등록</h1>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <form id="modiFrm" method="post" enctype="multipart/form-data">
+                <div class="form-group" style="display:none">
+                  <input type="text" class="form-control c-square" id="id_modi" name="id">
+                </div>
+                <div class="form-group">
+                  <label for="title_modi" class="control-label">자격증 ::</label>
+                  <input type="text" class="form-control c-square" id="title_modi" name="title">
+                </div>
+                <div class="form-group">
+                  <label for="issue_modi" class="control-label">발행처 ::</label>
+                  <input type="text" class="form-control c-square" id="issue_modi" name="issue">
+                </div>
+                <div class="form-group">
+                  <label for="date_modi" class="control-label">취득일자 ::</label>
+                  <input type="text" class="form-control c-square" id="date_modi" name="date">
+                </div>
+                <div class="form-group">
+                  <label for="" class="control-label">이미지::</label>
+                  <div class="db_img" id="images">
+                      <!-- jquery load() 이미지추가 -->
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="inputFile">
+                    <label for="pf_img" class="control-label">사진추가 ::</label>
+                    <input type="file" id="pf_img" name="pf_img[]" accept=".jpg, .png, .gif" multiple class="form-control c-square">
+
+                    <ul id="Preview" class="sortable"></ul>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="regi_date_modi" class="control-label">등록일자 ::</label>
+                  <input type="text" class="form-control c-square" id="regi_date_modi" name="regi_date" readonly>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button type="submit" form="modiFrm" id="btnModi_certifi"
+                class="btn" style="margin-right:5px;">수정</button>
+                <button type="button" id="btnDel_certifi" data-target="#del_certifi_alert"class="btn ">삭제 </button>
+                <button type="button" class="btn" data-bs-dismiss="modal">취소</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Delete Certification Alert Modal -->
+      <div class="modal" tabindex="-1" id="del_certifi_alert">
+        <div class=" modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">자격증 삭제</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>자격증을 삭제하시겠습니까?</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+              <button type="button" class="btn btn-primary " id="del_act_certifi">삭제</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
 
       <!-- Comment Modal -->
       <div class="modal fade" id="modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
@@ -247,12 +335,13 @@
                 class="btn c-btn-yellow-2 c-btn-square c-btn-bold c-btn-uppercase">Delete</button>
               <button type="button" class="btn c-btn-dark c-btn-border-2x c-btn-square c-btn-bold c-btn-uppercase"
                 data-bs-dismiss="modal">Close</button>
+                
             </div>
           </div>
         </div>
       </div>
 
-      <!-- Delete Alert Modal -->
+      <!-- Delete Comment Alert Modal -->
       <div class="modal" tabindex="-1" id="del_alert">
         <div class=" modal-dialog">
           <div class="modal-content">
@@ -261,7 +350,7 @@
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div class="modal-body">
-              <p>삭제하시겠습니까?</p>
+              <p>코멘트를 삭제하시겠습니까?</p>
             </div>
             <div class="modal-footer">
               <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>

@@ -13,7 +13,8 @@ body {
 .btn {
   cursor: pointer;
 }
-input {
+input,
+textarea {
   text-indent: 10px;
   font-family: "Pretendard";
 }

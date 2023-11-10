@@ -24,12 +24,9 @@
 // 테이블 join  
 $table = <<<EOT
  (
-    SELECT 
-      a.file,
-      b.*
-    FROM pf_img a
-    LEFT JOIN pf_list b ON b.no = a.mno
-    ORDER BY regi_date DESC
+    SELECT * from pf_list as A 
+    left join (select  mno, min(file) file from pf_img group by mno) as B 
+    on A.no = B.mno  order by no desc
 
  ) temp
 EOT;
@@ -51,7 +48,11 @@ $columns = array(
             'db' => 'file',
             'dt' => 4,
             'formatter' => function( $d, $row ) {
+                if($d == null){
+                    return "<div class='no_img'>이미지 없음</div>";
+                }else{
                 return "<img src='/$d' style='height:60px;width:100px;'/>";
+                }
             }       	
     ),    
     array(

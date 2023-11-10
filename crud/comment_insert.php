@@ -6,9 +6,9 @@
    $filtered = array(
     'name'=>mysqli_real_escape_string($conn, $_POST['name']),
     'phone'=>mysqli_real_escape_string($conn, $_POST['phone']),
-	  'email'=>mysqli_real_escape_string($conn, $_POST['email']),
-	  'type'=>mysqli_real_escape_string($conn, $_POST['type']),
-	  'content'=>mysqli_real_escape_string($conn, $_POST['content']),   
+    'email'=>mysqli_real_escape_string($conn, $_POST['email']),
+    'type'=>mysqli_real_escape_string($conn, $_POST['type']),
+    'content'=>mysqli_real_escape_string($conn, $_POST['content']),   
     
   );
   
