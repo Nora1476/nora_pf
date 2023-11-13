@@ -1,3 +1,15 @@
+<?php  
+
+  /* 서버 접속 */
+  require_once("./crud/dbconfig.php");
+ 
+  $sql= "select a.*, b.file from pf_list a 
+          left join pf_img b on a.no = b.mno 
+          where file is not null ";        
+
+  $result = mysqli_query($conn, $sql);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -81,6 +93,9 @@
 
             <!-- Portfolio Gallery Grid -->
             <ul class="img_row">
+
+
+
               <li class="column development">
                 <div class="content">
                   <img src="/img/tempt/01.jpg" alt="development" style="width: 100%" />
@@ -88,55 +103,7 @@
                   <p>Lorem ipsum dolor..</p>
                 </div>
               </li>
-              <li class="column language">
-                <div class="content">
-                  <img src="/img/tempt/02.jpg" alt="language" style="width: 100%" />
-                  <h4>Lights</h4>
-                  <p>Lorem ipsum dolor..</p>
-                </div>
-              </li>
-              <li class="column development">
-                <div class="content">
-                  <img src="/img/tempt/03.jpg" alt="development" style="width: 100%" />
-                  <h4>Forest</h4>
-                  <p>Lorem ipsum dolor..</p>
-                </div>
-              </li>
-              <li class="column language">
-                <div class="content">
-                  <img src="/img/tempt/04.jpg" alt="language" style="width: 100%" />
-                  <h4>Retro</h4>
-                  <p>Lorem ipsum dolor..</p>
-                </div>
-              </li>
-              <li class="column development">
-                <div class="content">
-                  <img src="/img/tempt/05.jpg" alt="development" style="width: 100%" />
-                  <h4>Fast</h4>
-                  <p>Lorem ipsum dolor..</p>
-                </div>
-              </li>
-              <li class="column language">
-                <div class="content">
-                  <img src="/img/tempt/06.jpg" alt="language" style="width: 100%" />
-                  <h4>Classic</h4>
-                  <p>Lorem ipsum dolor..</p>
-                </div>
-              </li>
-              <li class="column others">
-                <div class="content">
-                  <img src="/img/tempt/07.jpg" alt="others" style="width: 100%" />
-                  <h4>Girl</h4>
-                  <p>Lorem ipsum dolor..</p>
-                </div>
-              </li>
-              <li class="column others">
-                <div class="content">
-                  <img src="/img/tempt/08.jpg" alt="others" style="width: 100%" />
-                  <h4>Woman</h4>
-                  <p>Lorem ipsum dolor..</p>
-                </div>
-              </li>
+
               <!-- END GRID -->
             </ul>
           </div>
@@ -193,9 +160,6 @@
   <script type="text/javascript" src="./js/aos/aos.js"></script>
 
   <script src="/js/common.js"></script>
-  <script>
-  $(function() {});
-  </script>
 </body>
 
 </html>

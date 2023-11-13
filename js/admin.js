@@ -50,40 +50,6 @@ $(function () {
     $("#regi_modal").modal("show").modal({
       backdrop: "static",
     });
-
-    //이미지 미리보기
-    $("#regi_modal").on("change", "#pf_img", function (e) {
-      // $("#pf_img").change(function(e){
-      //div 내용 비워주기
-      $("#Preview").empty();
-
-      var files = e.target.files;
-      var arr = Array.prototype.slice.call(files);
-
-      preview(arr);
-
-      function preview(arr) {
-        arr.forEach(function (f) {
-          //div에 이미지 추가
-          var str = '<li class="ui-state-default">';
-          //str += '<span>'+fileName+'</span><br>';
-
-          //이미지 파일 미리보기
-          if (f.type.match("image.*")) {
-            //파일을 읽기 위한 FileReader객체 생성
-            var reader = new FileReader();
-            reader.onload = function (e) {
-              //파일 읽어들이기를 성공했을때 호출되는 이벤트 핸들러
-              str += '<img src="' + e.target.result + '" title="' + f.name + '" id="' + f.lastModified + '"  width=80 height=80>';
-              str += '<span class="delBtn" data-index="' + f.lastModified + '"> x </span>';
-              str += "</li>";
-              $(str).appendTo("#regi_modal #Preview");
-            };
-            reader.readAsDataURL(f);
-          }
-        });
-      }
-    });
   });
   $("#regiFrm").submit(function () {
     var data = new FormData(this);
@@ -97,6 +63,10 @@ $(function () {
     if ($("#issue").val() == "") {
       alert("발행처를 입력해 주세요.");
       $("#issue").focus();
+      return false;
+    }
+    if ($(':radio[name="kind"]:checked').length < 1) {
+      alert("구분를 선택해주세요.");
       return false;
     }
     if ($("#date").val() == "") {
@@ -118,8 +88,8 @@ $(function () {
       contentType: false,
       processData: false,
       success: function (data) {
-        // alert("성공적으로 등록되었습니다.");
-        alert(data);
+        alert("성공적으로 등록되었습니다.");
+        $("#pf_img").val("");
       },
     });
   });
@@ -137,45 +107,11 @@ $(function () {
     $("#id_modi").val(data[0]);
     $("#title_modi").val(data[1]);
     $("#issue_modi").val(data[2]);
-    $("#date_modi").val(data[3]);
-    $("#regi_date_modi").val(data[5]);
+    $(":radio[name='kind'][value='" + data[3] + "']").attr("checked", true);
+    $("#date_modi").val(data[4]);
+    $("#regi_date_modi").val(data[6]);
 
     $("#images").load("../crud/pf_imgload.php", { mno: id });
-
-    //이미지 미리보기
-    $("#certifi_modal").on("change", "#pf_img", function (e) {
-      //div 내용 비워주기
-      $("#certifi_modal #Preview").empty();
-
-      var files = e.target.files;
-      var arr = Array.prototype.slice.call(files);
-
-      console.log(arr);
-
-      preview(arr);
-
-      function preview(arr) {
-        arr.forEach(function (f) {
-          //div에 이미지 추가
-          var str = '<li class="ui-state-default">';
-          //str += '<span>'+fileName+'</span><br>';
-
-          //이미지 파일 미리보기
-          if (f.type.match("image.*")) {
-            //파일을 읽기 위한 FileReader객체 생성
-            var reader = new FileReader();
-            reader.onload = function (e) {
-              //파일 읽어들이기를 성공했을때 호출되는 이벤트 핸들러
-              str += '<img src="' + e.target.result + '" title="' + f.name + '" id="' + f.lastModified + '"  width=80 height=80>';
-              str += '<span class="delBtn" data-index="' + f.lastModified + '"> x </span>';
-              str += "</li>";
-              $(str).appendTo("#certifi_modal #Preview");
-            };
-            reader.readAsDataURL(f);
-          }
-        });
-      }
-    });
   });
 
   //자격증_삭제
@@ -207,7 +143,6 @@ $(function () {
     .off("click")
     .on("click", function (e) {
       e.preventDefault();
-
       var file = new FormData($("#modiFrm")[0]);
 
       //유효성 검사
@@ -356,6 +291,44 @@ $(function () {
       });
     });
 
+  //이미지 미리보기
+  $(".modal").on("change", "#pf_img", function (e) {
+    //div 내용 비워주기
+    var $preview = $(this).next();
+    $preview.empty();
+
+    var files = e.target.files;
+    var arr = Array.prototype.slice.call(files);
+
+    preview(arr);
+
+    function preview(arr) {
+      arr.forEach(function (f) {
+        //div에 이미지 추가
+        var str = '<li class="ui-state-default">';
+        //str += '<span>'+fileName+'</span><br>';
+
+        //이미지 파일 미리보기
+        if (f.type.match("image.*")) {
+          //파일을 읽기 위한 FileReader객체 생성
+          var reader = new FileReader();
+          reader.onload = function (e) {
+            //파일 읽어들이기를 성공했을때 호출되는 이벤트 핸들러
+            str += '<img src="' + e.target.result + '" title="' + f.name + '" id="' + f.lastModified + '"  width=80 height=80>';
+            str += '<span class="delBtn" data-index="' + f.lastModified + '"> x </span>';
+            str += "</li>";
+            $(str).appendTo($preview);
+          };
+          reader.readAsDataURL(f);
+        }
+      });
+    }
+  });
+  //미리보기 이미지 비우기
+  $(".modal").on("shown.bs.modal", function (e) {
+    $(this).find("#pf_img").val("");
+    $(this).find("#Preview").empty();
+  });
   //미리보기 이미지 삭제
   $(document).on("click", ".delBtn", function () {
     //삭제할 이미지타이틀 가져와서 선택된 input배열 동기화

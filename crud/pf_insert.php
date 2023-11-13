@@ -6,6 +6,7 @@
    $filtered = array(
     'title'=>mysqli_real_escape_string($conn, $_POST['title']),
     'issue'=>mysqli_real_escape_string($conn, $_POST['issue']),
+    'kind'=>mysqli_real_escape_string($conn, $_POST['kind']),
 		'date'=>mysqli_real_escape_string($conn, $_POST['date']),
   );
   
@@ -13,10 +14,11 @@
 
 	 $sql = "
   INSERT INTO pf_list
-    (title, issue, date, regi_date)
+    (title, issue, kind, date, regi_date)
     VALUES(
       '{$filtered['title']}',
       '{$filtered['issue']}',
+      '{$filtered['kind']}',
       '{$filtered['date']}',
        NOW()
     )";

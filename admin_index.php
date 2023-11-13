@@ -103,19 +103,20 @@
 
           <div class="table_wrap">
             <table id="t_certifi" class="display" style="width: 100%">
-             <colgroup>
+              <colgroup>
                 <col width="5%" />
                 <col width="20%" />
-                <col width="20%"  />
-                <col width="15%"  />
-                <col width="20%"  />
-                <col width="20%"  />
-            </colgroup>
+                <col width="20%" />
+                <col width="15%" />
+                <col width="20%" />
+                <col width="20%" />
+              </colgroup>
               <thead>
                 <tr>
                   <th>No</th>
                   <th>자격증</th>
                   <th>발행처</th>
+                  <th>구분</th>
                   <th>취득일자</th>
                   <th>이미지</th>
                   <th>등록일자</th>
@@ -123,9 +124,10 @@
               </thead>
               <!-- <tfoot>
                 <tr>
-                  <th>No</th>
+                 <th>No</th>
                   <th>자격증</th>
                   <th>발행처</th>
+                  <th>구분</th>
                   <th>취득일자</th>
                   <th>이미지</th>
                   <th>등록일자</th>
@@ -191,15 +193,26 @@
                   <input type="text" class="form-control c-square" id="issue" name="issue">
                 </div>
                 <div class="form-group">
+                  <label for="kind" class="control-label">구분::</label>
+                  <div class="kind_wrap">
+                    <label for="kind1"> <input type="radio" name="kind" id="kind1" value="개발" /> 개발 </label>
+                    <label for="kind2"> <input type="radio" name="kind" id="kind2" value="언어"> 언어 </label>
+                    <label for="kind3"> <input type="radio" name="kind" id="kind3" value="기타"> 기타 </label>
+                  </div>
+                </div>
+                <div class="form-group">
                   <label for="date" class="control-label">취득일자 ::</label>
                   <input type="text" class="form-control c-square" id="date" name="date">
                 </div>
                 <div class="form-group">
                   <div class="inputFile">
                     <label for="pf_img" class="control-label">사진등록 ::</label>
-                    <input type="file" id="pf_img" name="pf_img[]" accept=".jpg, .png, .gif" multiple class="form-control c-square">
+                    <input type="file" id="pf_img" name="pf_img[]" accept=".jpg, .png, .gif" multiple
+                      class="form-control c-square">
 
-                    <ul id="Preview" class="sortable"></ul>
+                    <ul id="Preview" class="sortable">
+                      <li>미리보기</li>
+                    </ul>
                   </div>
                 </div>
               </form>
@@ -214,7 +227,7 @@
         </div>
       </div>
 
-    <!-- Certification Modi Modal -->
+      <!-- Certification Modi Modal -->
       <div class="modal fade" id="certifi_modal" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
         <div class="modal-dialog">
@@ -237,19 +250,28 @@
                   <input type="text" class="form-control c-square" id="issue_modi" name="issue">
                 </div>
                 <div class="form-group">
+                  <label for="kind" class="control-label">구분::</label>
+                  <div class="kind_wrap">
+                    <label for="kind1"> <input type="radio" name="kind" id="kind1" value="개발" /> 개발 </label>
+                    <label for="kind2"> <input type="radio" name="kind" id="kind2" value="언어"> 언어 </label>
+                    <label for="kind3"> <input type="radio" name="kind" id="kind3" value="기타"> 기타 </label>
+                  </div>
+                </div>
+                <div class="form-group">
                   <label for="date_modi" class="control-label">취득일자 ::</label>
                   <input type="text" class="form-control c-square" id="date_modi" name="date">
                 </div>
                 <div class="form-group">
                   <label for="" class="control-label">이미지::</label>
                   <div class="db_img" id="images">
-                      <!-- jquery load() 이미지추가 -->
+                    <!-- jquery load() 이미지추가 -->
                   </div>
                 </div>
                 <div class="form-group">
                   <div class="inputFile">
                     <label for="pf_img" class="control-label">사진추가 ::</label>
-                    <input type="file" id="pf_img" name="pf_img[]" accept=".jpg, .png, .gif" multiple class="form-control c-square">
+                    <input type="file" id="pf_img" name="pf_img[]" accept=".jpg, .png, .gif" multiple
+                      class="form-control c-square">
 
                     <ul id="Preview" class="sortable"></ul>
                   </div>
@@ -261,10 +283,10 @@
               </form>
             </div>
             <div class="modal-footer">
-              <button type="submit" form="modiFrm" id="btnModi_certifi"
-                class="btn" style="margin-right:5px;">수정</button>
-                <button type="button" id="btnDel_certifi" data-target="#del_certifi_alert"class="btn ">삭제 </button>
-                <button type="button" class="btn" data-bs-dismiss="modal">취소</button>
+              <button type="submit" form="modiFrm" id="btnModi_certifi" class="btn"
+                style="margin-right:5px;">수정</button>
+              <button type="button" id="btnDel_certifi" data-target="#del_certifi_alert" class="btn ">삭제 </button>
+              <button type="button" class="btn" data-bs-dismiss="modal">취소</button>
             </div>
           </div>
         </div>
@@ -335,7 +357,7 @@
                 class="btn c-btn-yellow-2 c-btn-square c-btn-bold c-btn-uppercase">Delete</button>
               <button type="button" class="btn c-btn-dark c-btn-border-2x c-btn-square c-btn-bold c-btn-uppercase"
                 data-bs-dismiss="modal">Close</button>
-                
+
             </div>
           </div>
         </div>

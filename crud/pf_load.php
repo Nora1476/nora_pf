@@ -43,10 +43,11 @@ $columns = array(
  	array( 'db' => 'no', 'dt' => 0 ),
     array( 'db' => 'title', 'dt' => 1 ),
     array( 'db' => 'issue',  'dt' => 2 ),
-    array( 'db' => 'date',   'dt' => 3 ),
+    array( 'db' => 'kind',   'dt' => 3 ),
+    array( 'db' => 'date',   'dt' => 4 ),
     array( 
             'db' => 'file',
-            'dt' => 4,
+            'dt' => 5,
             'formatter' => function( $d, $row ) {
                 if($d == null){
                     return "<div class='no_img'>이미지 없음</div>";
@@ -57,7 +58,7 @@ $columns = array(
     ),    
     array(
         'db'        => 'regi_date',
-        'dt'        => 5,
+        'dt'        => 6,
         'formatter' => function( $d, $row ) {
             return date( 'Y/m/d  H:i:s', strtotime($d));
         }
