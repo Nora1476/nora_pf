@@ -195,9 +195,9 @@
                 <div class="form-group">
                   <label for="kind" class="control-label">구분::</label>
                   <div class="kind_wrap">
-                    <label for="kind1"> <input type="radio" name="kind" id="kind1" value="개발" /> 개발 </label>
-                    <label for="kind2"> <input type="radio" name="kind" id="kind2" value="언어"> 언어 </label>
-                    <label for="kind3"> <input type="radio" name="kind" id="kind3" value="기타"> 기타 </label>
+                    <label for="kind1"> <input type="radio" name="kind" id="kind1" value="development" /> 개발 </label>
+                    <label for="kind2"> <input type="radio" name="kind" id="kind2" value="language"> 언어 </label>
+                    <label for="kind3"> <input type="radio" name="kind" id="kind3" value="other"> 기타 </label>
                   </div>
                 </div>
                 <div class="form-group">
@@ -252,9 +252,9 @@
                 <div class="form-group">
                   <label for="kind" class="control-label">구분::</label>
                   <div class="kind_wrap">
-                    <label for="kind1"> <input type="radio" name="kind" id="kind1" value="개발" /> 개발 </label>
-                    <label for="kind2"> <input type="radio" name="kind" id="kind2" value="언어"> 언어 </label>
-                    <label for="kind3"> <input type="radio" name="kind" id="kind3" value="기타"> 기타 </label>
+                    <label for="kind1"> <input type="radio" name="kind" id="kind1" value="development" /> 개발 </label>
+                    <label for="kind2"> <input type="radio" name="kind" id="kind2" value="language"> 언어 </label>
+                    <label for="kind3"> <input type="radio" name="kind" id="kind3" value="other"> 기타 </label>
                   </div>
                 </div>
                 <div class="form-group">
@@ -287,6 +287,24 @@
                 style="margin-right:5px;">수정</button>
               <button type="button" id="btnDel_certifi" data-target="#del_certifi_alert" class="btn ">삭제 </button>
               <button type="button" class="btn" data-bs-dismiss="modal">취소</button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- Delete Certification Alert Modal -->
+      <div class="modal" tabindex="-1" id="del_img_alert">
+        <div class=" modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">이미지 삭제</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>이미지을 삭제하시겠습니까?</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">취소</button>
+              <button type="button" class="btn btn-primary " id="del_act_img">삭제</button>
             </div>
           </div>
         </div>

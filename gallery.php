@@ -3,9 +3,9 @@
   /* 서버 접속 */
   require_once("./crud/dbconfig.php");
  
-  $sql= "select a.*, b.file from pf_list a 
-          left join pf_img b on a.no = b.mno 
-          where file is not null ";        
+  $sql= "SELECT * from pf_list as A 
+          left join (select  mno, min(file) file from pf_img group by mno) as B 
+          on A.no = B.mno  order by no desc ";        
 
   $result = mysqli_query($conn, $sql);
 ?>
@@ -94,17 +94,24 @@
             <!-- Portfolio Gallery Grid -->
             <ul class="img_row">
 
+            <?php
+              while($row = mysqli_fetch_array($result)){   
+                
+                echo "<li class='column " .$row['kind']. "'>";
+                echo "    <div class='img_main'>";
+                echo "      <img src='" .$row['file']. "' alt='" .$row['title']. "' >";
+                echo "    </div>";
+                echo "    <div class='tit_main'>";
+                echo "      <h4 class='pf_num' style='display:none'>" .$row['no']. "</h4>";
+                echo "      <h4 class='pf_tit'>" .$row['title']. "</h4>";
+                echo "      <p  class='pf_issue'>"  .$row['issue']. "</p>";
+                echo "    </div>";
+                echo "</li>";
+                
+              }      
+          
+            ?>   
 
-
-              <li class="column development">
-                <div class="content">
-                  <img src="/img/tempt/01.jpg" alt="development" style="width: 100%" />
-                  <h4>Mountains</h4>
-                  <p>Lorem ipsum dolor..</p>
-                </div>
-              </li>
-
-              <!-- END GRID -->
             </ul>
           </div>
         </div>
@@ -160,6 +167,8 @@
   <script type="text/javascript" src="./js/aos/aos.js"></script>
 
   <script src="/js/common.js"></script>
+  <script src="/js/gallery.js"></script>
+ 
 </body>
 
 </html>

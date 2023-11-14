@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -152,5 +153,6 @@
     <script type="text/javascript" src="./js/vendor/jquery.fitvids.js"></script>
 
     <script src="/js/common.js"></script>
+    <script src="/js/main.js"></script>
   </body>
 </html>

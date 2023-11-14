@@ -93,7 +93,6 @@ $(function () {
       },
     });
   });
-
   //자격증_모달창보이기
   $("#t_certifi tbody").on("click", "tr", function (e) {
     e.preventDefault();
@@ -113,7 +112,6 @@ $(function () {
 
     $("#images").load("../crud/pf_imgload.php", { mno: id });
   });
-
   //자격증_삭제
   $("#btnDel_certifi").click(function () {
     $("#del_certifi_alert").modal("show").modal({
@@ -137,7 +135,6 @@ $(function () {
       },
     });
   });
-
   // 자격증_수정
   $("#btnModi_certifi")
     .off("click")
@@ -176,6 +173,36 @@ $(function () {
         },
       });
     });
+  //모달창 안에 로드된 개별이미지 클릭(삭제) 이벤트
+  $("#certifi_modal #images").on("click", "img", function () {
+    $("#del_img_alert").modal("show");
+    var file = $(this).attr("src");
+    // var file = src.substr(2);
+
+    //개별 이미지 삭제확인 modal
+    $("#del_img_alert")
+      .off("click")
+      .on("click", "#del_act_img", function (e) {
+        e.preventDefault();
+
+        $.ajax({
+          url: "./crud/pf_del_img.php",
+          type: "POST",
+          data: {
+            file: file,
+          },
+          success: function (data) {
+            $("#del_img_alert").modal("hide");
+            alert("이미지가 삭제되었습니다.");
+            $("#t_certifi")
+              .DataTable()
+              .ajax.reload(function () {
+                $("#certifi_modal").modal("hide");
+              });
+          },
+        });
+      });
+  });
 
   //코멘트_모달창
   $("#t_comment tbody").on("click", "tr", function (e) {

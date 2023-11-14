@@ -9,19 +9,21 @@
     'id'=>mysqli_real_escape_string($conn, $_POST['id']),
     'title'=>mysqli_real_escape_string($conn, $_POST['title']),
     'issue'=>mysqli_real_escape_string($conn, $_POST['issue']),
-		'date'=>mysqli_real_escape_string($conn, $_POST['date']),
+    'kind'=>mysqli_real_escape_string($conn, $_POST['kind']),
+	'date'=>mysqli_real_escape_string($conn, $_POST['date']),
   );
   
 
 
   $sql = " 
-					update pf_list 
-  					set
-							title = '{$filtered['title']}',
-							issue = '{$filtered['issue']}',
-  						date = '{$filtered['date']}'
-  						where no = '{$filtered['id']}'			
-  			";
+            update pf_list 
+            set
+                title = '{$filtered['title']}',
+                issue = '{$filtered['issue']}',
+                kind = '{$filtered['kind']}',
+                date = '{$filtered['date']}'
+                where no = '{$filtered['id']}'			
+        ";
 
    $result = mysqli_query($conn, $sql);
 
