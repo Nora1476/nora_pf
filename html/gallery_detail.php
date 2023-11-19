@@ -7,18 +7,15 @@ $no = $_GET['no'];
   	  
 settype( $_GET['no'], 'integer');
 
-$sql_info=" SELECT a.*, b.* FROM pf_img a LEFT JOIN pf_list b ON b.no = a.mno
-		where b.no=$no ";
-
  		  
 $sql=" SELECT a.*, b.* FROM pf_img a LEFT JOIN pf_list b ON b.no = a.mno
 		where b.no=$no ";
+$sql_info=" SELECT a.*, b.* FROM pf_img a LEFT JOIN pf_list b ON b.no = a.mno
+		where b.no=$no ";
 
-
-		
 $result = mysqli_query($conn, $sql);	
-$result_info = mysqli_query($conn, $sql_info);
 
+$result_info = mysqli_query($conn, $sql_info);
 $row_info = mysqli_fetch_array($result_info)
 
 	
@@ -101,6 +98,7 @@ $row_info = mysqli_fetch_array($result_info)
             <div class="img_wrap">
               <?php 
                 while($row = mysqli_fetch_array($result)){	
+                  if($row['file'] == "") $row['file'] = "./img/image/paper.png" ;
                     echo "<div>";														
                     echo "	<img src='" .$row['file']. "'>";	
                     echo "</div>";										

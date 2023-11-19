@@ -95,7 +95,8 @@
             <ul class="img_row">
 
               <?php
-              while($row = mysqli_fetch_array($result)){   
+              while($row = mysqli_fetch_array($result)){  
+                if($row['file'] == "") $row['file'] = "../img/image/paper.png" ;
                 
                 echo "<li class='column " .$row['kind']. "'>";
                 echo "    <div class='img_main'>";

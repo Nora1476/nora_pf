@@ -48,7 +48,7 @@ $(function () {
   //갤러리(masonry 라이브러리 사용)
   var $container = $(".sec3 .gallery"),
     $loadMoreBtn = $(".load_more"),
-    $addItemCount = 10,
+    $addItemCount = 8,
     $added = 0, //더보기 버튼을 클릭해서 추가된 항목수(리스트 항목을 모두 로드했을때 , 더보기 버튼을 사라지게하기 위함)
     $allData = [];
   $container.masonry({
@@ -58,25 +58,29 @@ $(function () {
     columnWidth: ".gallery_sizer",
     gutter: 10,
   });
-  $.getJSON("./data/content.json", initGallery);
-  function initGallery(data) {
-    //매개변수를 하나만 쓰면 data를 몽땅 가져온다는 뜻
-    //매개변수를 두개쓰면 첫번쨰 i 인덱스, 두번째 data 내용
-    $allData = data; //전체 데이터를 가져옴
 
-    addItem(); // 열자마자 아이템 추가
-    $loadMoreBtn.click(addItem); //버튼 클릭시 아이템 추가
-  } //initGallery
+  $(document).ready(function () {
+    $.ajax({
+      url: "../crud/gallery_main.php",
+      type: "get",
+      success: function (data) {
+        $allData = JSON.parse(data); //전체 데이터를 가져옴
+        console.log($allData);
+
+        addItem(); // 열자마자 아이템 추가
+        $loadMoreBtn.click(addItem); //버튼 클릭시 아이템 추가
+      },
+    });
+  });
+
   function addItem() {
     var elements = [];
     var slidedData;
     //A.slice(0,8)  A배열 0번째부터 번쨰 전까지의 값을 가져옴
     slidedData = $allData.slice($added, $added + $addItemCount);
-
     $.each(slidedData, function (i, item) {
-      var itemHTML = '<li class="gallery_item is_loading">' + "<figure>" + '<img src="' + item.images.thumb + '" alt="' + item.title + '">' + "</figure>" + "</li>";
-
-      elements.push($(itemHTML).get(0)); //슬라이스로 잘라서 가져온 데이터를 사용하여 변수 itemHTML을 반복문을 통해 elements 배열에 넣음
+      var itemHTML = '<li class="gallery_item is_loading">' + "<figure>" + '<img src="' + item.file + '" alt="' + item.title + '">' + "</figure>" + "</li>";
+      elements.push($(itemHTML).get(0));
     }); //each
     $container.append(elements);
 

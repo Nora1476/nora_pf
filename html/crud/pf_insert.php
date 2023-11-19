@@ -10,18 +10,18 @@
 		'certifi_date'=>mysqli_real_escape_string($conn, $_POST['certifi_date']),
   );
   
-  // STR_TO_DATE({$filtered['certifi_date']}, '%Y-%m-%d'),
-
-	 $sql = "
-      INSERT INTO pf_list
-      (title, issue, kind, certifi_date, regi_date)
-      VALUES (
-        '{$filtered['title']}',
-        '{$filtered['issue']}',
-        '{$filtered['kind']}',
-        '{$filtered['certifi_date']}',
-        NOW()
-      )";
+  
+  $sql = "
+  INSERT INTO pf_list
+  (title, issue, kind, certifi_date, regi_date)
+  VALUES (
+    '{$filtered['title']}',
+    '{$filtered['issue']}',
+    '{$filtered['kind']}',
+    '{$filtered['certifi_date']}',
+    NOW()
+    )";
+    // STR_TO_DATE({$filtered['certifi_date']}, '%Y-%m-%d'),
 
 
    $result = mysqli_query($conn, $sql);

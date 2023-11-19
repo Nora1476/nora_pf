@@ -217,7 +217,8 @@
   z-index: 20;
 }
 .sec3 #lightbox_img {
-  transform: scale(2);
+  max-width: 60%;
+  max-height: 80%;
 }
 .sec3 .close {
   width: 50px;

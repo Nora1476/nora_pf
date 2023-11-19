@@ -208,7 +208,7 @@
                 <div class="form-group">
                   <div class="inputFile">
                     <label for="pf_img" class="control-label">사진등록 ::</label>
-                    <input type="file" id="pf_img" name="pf_img[]" accept=".jpg, .png, .gif" multiple
+                    <input type="file" id="pf_img" name="pf_img[]" accept=".jpg, .png, .gif, .pdf" multiple
                       class="form-control c-square">
 
                     <ul id="Preview" class="sortable">
@@ -271,7 +271,7 @@
                 <div class="form-group">
                   <div class="inputFile">
                     <label for="pf_img" class="control-label">사진추가 ::</label>
-                    <input type="file" id="pf_img" name="pf_img[]" accept=".jpg, .png, .gif" multiple
+                    <input type="file" id="pf_img" name="pf_img[]" accept=".jpg, .png, .gif, .pdf" multiple
                       class="form-control c-square">
 
                     <ul id="Preview" class="sortable"></ul>
