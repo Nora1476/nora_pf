@@ -42,7 +42,7 @@
       <div class="inner">
         <div class="gnb_wrap">
           <div class="gnb_inner">
-            <a href="/index.html" class="gnb logo">
+            <a href="./index.html" class="gnb logo">
               <img src="./img/image/logo.png" alt="" />
             </a>
 
@@ -94,7 +94,7 @@
             <!-- Portfolio Gallery Grid -->
             <ul class="img_row">
 
-            <?php
+              <?php
               while($row = mysqli_fetch_array($result)){   
                 
                 echo "<li class='column " .$row['kind']. "'>";
@@ -110,7 +110,7 @@
                 
               }      
           
-            ?>   
+            ?>
 
             </ul>
           </div>
@@ -168,7 +168,7 @@
 
   <script src="/js/common.js"></script>
   <script src="/js/gallery.js"></script>
- 
+
 </body>
 
 </html>

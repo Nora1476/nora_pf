@@ -30,7 +30,7 @@
       <div class="inner">
         <div class="gnb_wrap">
           <div class="gnb_inner">
-            <a href="#" class="gnb logo">
+            <a href="/" class="gnb logo">
               <img src="./img/image/logo.png" alt="" />
             </a>
 

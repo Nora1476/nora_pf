@@ -51,48 +51,54 @@ $(function () {
       backdrop: "static",
     });
   });
-  $("#regiFrm").submit(function () {
-    var data = new FormData(this);
+  $("#btnRegi")
+    .off("click")
+    .on("click", function (e) {
+      e.preventDefault();
+      var data = new FormData($("#regiFrm")[0]);
 
-    //유효성 검사
-    if ($("#title").val() == "") {
-      alert("자격증 이름을 입력해 주세요.");
-      $("#title").focus();
-      return false;
-    }
-    if ($("#issue").val() == "") {
-      alert("발행처를 입력해 주세요.");
-      $("#issue").focus();
-      return false;
-    }
-    if ($(':radio[name="kind"]:checked').length < 1) {
-      alert("구분를 선택해주세요.");
-      return false;
-    }
-    if ($("#date").val() == "") {
-      alert("취득일자를 입력해 주세요.");
-      $("#date").focus();
-      return false;
-    }
-    if ($("#pf_img").val() == "") {
-      alert("이미지를 선택해 주세요.");
-      $("#pf_img").focus();
-      return false;
-    }
+      //유효성 검사
+      if ($("#title").val() == "") {
+        alert("자격증 이름을 입력해 주세요.");
+        $("#title").focus();
+        return false;
+      }
+      if ($("#issue").val() == "") {
+        alert("발행처를 입력해 주세요.");
+        $("#issue").focus();
+        return false;
+      }
+      if ($(':radio[name="kind"]:checked').length < 1) {
+        alert("구분를 선택해주세요.");
+        return false;
+      }
+      if ($("#date").val() == "") {
+        alert("취득일자를 입력해 주세요.");
+        $("#date").focus();
+        return false;
+      }
+      if ($("#pf_img").val() == "") {
+        alert("이미지를 선택해 주세요.");
+        $("#pf_img").focus();
+        return false;
+      }
 
-    $.ajax({
-      url: "./crud/pf_insert.php",
-      type: "POST",
-      data: data,
-      cache: false,
-      contentType: false,
-      processData: false,
-      success: function (data) {
-        alert("성공적으로 등록되었습니다.");
-        // alert(data);
-      },
+      $.ajax({
+        url: "./crud/pf_insert.php",
+        type: "POST",
+        data: data,
+        cache: false,
+        contentType: false,
+        processData: false,
+        success: function (data) {
+          $("#regiFrm")[0].reset();
+          $("#regi_modal").modal("hide");
+          $("#t_certifi").DataTable().ajax.reload();
+          alert("성공적으로 등록되었습니다.");
+          // alert(data);
+        },
+      });
     });
-  });
   //자격증_모달창보이기
   $("#t_certifi tbody").on("click", "tr", function (e) {
     e.preventDefault();
@@ -170,6 +176,7 @@ $(function () {
           $("#certifi_modal").modal("hide");
           $("#t_certifi").DataTable().ajax.reload();
           alert("수정 완료되었습니다.");
+          // alert(data);
         },
       });
     });

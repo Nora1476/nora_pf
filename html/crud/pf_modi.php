@@ -40,7 +40,10 @@
 
 	//전역변수 선언
 	$no = $filtered['id'];
-  
+
+
+  $array = print_r($_FILES['pf_img']['name']);
+  echo $array;  
 
 	if(is_array($_FILES)) {
      

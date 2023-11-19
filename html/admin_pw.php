@@ -45,14 +45,14 @@
       <div class="inner">
         <div class="gnb_wrap">
           <div class="gnb_inner">
-            <a href="#" class="gnb logo">
-              <img src="./img/image/logo.png" alt="" />
+            <a href="./admin_index.php" class="gnb logo">
+              <img src="./img/image/logo.png" alt="logo" />
             </a>
 
             <div class="gnb pc_ver">
               <ul class="main_menu">
-                <li class="links">CERTIFICATION</li>
-                <li class="links">COMMENT</li>
+                <li class="links"><a href="./admin_index.php#admin1">CERTIFICATION</a></li>
+                <li class="links"><a href="./admin_index.php#admin2">COMMENT</a></li>
                 <li class="links"><a href='./admin_pw.php'>ChangePW</a></li>
                 <li class="links"><a href='./crud/admin_logout.php'>Logout</a></li>
               </ul>
@@ -64,8 +64,8 @@
                 <li class="top">
                   <div><span class="material-symbols-outlined btn_close"> close </span></div>
                 </li>
-                <li class="links">CERTIFICATION</li>
-                <li class="links">COMMENT</li>
+                <li class="links"><a href="./admin_index.php#admin1">CERTIFICATION</a></li>
+                <li class="links"><a href="./admin_index.php#admin2">COMMENT</a></li>
                 <li class="links"><a href='./admin_pw.php' class="links">Change&nbsp;PW</a></li>
                 <li class="links"><a href='./crud/admin_logout.php' class="c-link">Logout</a></li>
               </ul>

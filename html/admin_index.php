@@ -109,7 +109,8 @@
                 <col width="20%" />
                 <col width="15%" />
                 <col width="20%" />
-                <col width="20%" />
+                <col width="10%" />
+                <col width="10%" />
               </colgroup>
               <thead>
                 <tr>
@@ -462,6 +463,7 @@
       dateFormat: "yy-mm-dd", // 텍스트 필드에 입력되는 날짜 형식.
       changeMonth: true, // 월 셀렉트 박스
       changeYear: true, // 년 셀렉트 박스
+      yearRange: 'c-100:c+10',
       nextText: '다음 달', // next 아이콘의 툴팁.
       prevText: '이전 달', // prev 아이콘의 툴팁.
       showMonthAfterYear: true, // 셀렉트 박스를 년,월 순으로.

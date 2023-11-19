@@ -122,3 +122,16 @@
   background-color: #32c5d2;
   margin: 20px 0;
 }
+
+.slick-initialized .slick-slide {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slick-slide {
+  min-height: 500px;
+}
+.slick-slide img {
+  width: 100%;
+  object-fit: cover;
+}
