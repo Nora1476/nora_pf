@@ -10,7 +10,7 @@
   color: #000000;
   margin: 10px 0 6px 0;
   font-weight: 500;
-  font-size: 24px;
+  font-size: 28px;
   letter-spacing: 1px;
 }
 
@@ -70,6 +70,7 @@
   justify-content: center;
 }
 .gal2 .tit_main .pf_tit {
+  text-align: center;
   font-size: 18px;
 }
 .gal2 .show {
@@ -79,6 +80,13 @@
   display: none;
 }
 
+.gal3 .sec_inner {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
 .gal3 .img_wrap {
   width: 100%;
 }
@@ -90,7 +98,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
-  align-items: flex;
+  align-items: flex-start;
   margin-top: 20px;
 }
 .gal3 .con_wrap > div {
@@ -144,4 +152,133 @@
 .slick-slide img {
   width: 100%;
   object-fit: contain;
+}
+
+@media all and (max-width: 768px) {
+  .gal1 .sec_inner {
+    padding: 40px 0;
+  }
+  .gal1 .sec_inner .map {
+    padding: 0 20px;
+  }
+  .gal1 .sec_inner .map > h4 {
+    font-size: 24px;
+  }
+
+  .gal2 .sec_inner {
+    padding: 0;
+  }
+  .gal2 #btnFilter {
+    gap: 12px;
+    font-size: 16px;
+  }
+  .gal2 #btnFilter > button {
+    padding: 12px;
+  }
+  .gal2 .img_row {
+    gap: 18px;
+    padding-top: 40px;
+  }
+  .gal2 .img_row > li.column {
+    width: calc(100% / 2 - 20px);
+    margin-bottom: 18px;
+  }
+  .gal2 .tit_main .pf_tit {
+    font-size: 18px;
+  }
+
+  .gal3 .sec_inner {
+    gap: 18px;
+  }
+  .gal3 .con_wrap {
+    margin-top: 18px;
+  }
+  .gal3 .con_wrap > div .tit {
+    font-size: 24px;
+  }
+  .gal3 .con_wrap > div .con {
+    font-size: 20px;
+  }
+  .gal3 .con_wrap .left {
+    width: 60%;
+  }
+  .gal3 .con_wrap .right {
+    width: 40%;
+  }
+  .gal3 .con_wrap .left .con {
+    font-size: 26px;
+  }
+  .gal3 .con_wrap .right .con > li {
+    gap: 18px;
+  }
+  .gal3 .con_wrap .right .con > li > div {
+    white-space: nowrap;
+  }
+
+  .gal3 .tit::after {
+    margin: 18px 0;
+  }
+}
+
+@media all and (max-width: 540px) {
+  .gal1 .sec_inner {
+    padding: 24px 0;
+  }
+  .gal1 .sec_inner .map > h4 {
+    font-size: 18px;
+  }
+  .gal2 #btnFilter {
+    gap: 4px;
+    font-size: 14px;
+  }
+  .gal2 #btnFilter > button {
+    padding: 6px 4px;
+  }
+  .gal2 .img_row {
+    gap: 10px;
+    padding-top: 20px;
+  }
+  .gal2 .img_row > li.column {
+    width: calc(100% / 2 - 10px);
+    margin-bottom: 14px;
+  }
+  .gal2 .tit_main .pf_tit {
+    font-size: 15px;
+  }
+  .gal2 .tit_main .pf_issue {
+    font-size: 12px;
+  }
+
+  .gal3 .sec_inner {
+    gap: 12px;
+  }
+  .gal3 .con_wrap {
+    flex-direction: column;
+    gap: 28px;
+    margin-top: 16px;
+  }
+  .gal3 .con_wrap > div {
+    gap: 6px;
+  }
+  .gal3 .con_wrap > div .tit {
+    font-size: 20px;
+  }
+  .gal3 .con_wrap > div .con {
+    font-size: 16px;
+  }
+  .gal3 .con_wrap .left {
+    width: 100%;
+  }
+  .gal3 .con_wrap .right {
+    width: 100%;
+  }
+  .gal3 .con_wrap .left .con {
+    font-size: 18px;
+  }
+  .gal3 .con_wrap .right .con > li {
+    gap: 16px;
+  }
+  .gal3 .tit::after {
+    margin: 6px 0;
+  }
 }

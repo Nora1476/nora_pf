@@ -65,7 +65,6 @@ $(function () {
       type: "get",
       success: function (data) {
         $allData = JSON.parse(data); //전체 데이터를 가져옴
-        console.log($allData);
 
         addItem(); // 열자마자 아이템 추가
         $loadMoreBtn.click(addItem); //버튼 클릭시 아이템 추가
@@ -102,7 +101,6 @@ $(function () {
   //갤러리 이미지 light box
   $(document).on("click", ".gallery_item img", function () {
     const imageSrc = $(this).attr("src");
-    console.log(imageSrc);
     $("#lightbox_img").attr("src", imageSrc);
     $("#lightbox").removeClass("hide");
     $("body").css("overflow", "hidden");

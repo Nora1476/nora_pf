@@ -95,16 +95,7 @@ $row_info = mysqli_fetch_array($result_info)
 
         <div class="sec gal3" id="sec3">
           <div class="sec_inner">
-            <div class="img_wrap">
-              <?php 
-                while($row = mysqli_fetch_array($result)){	
-                  if($row['file'] == "") $row['file'] = "./img/image/paper.png" ;
-                    echo "<div>";														
-                    echo "	<img src='" .$row['file']. "'>";	
-                    echo "</div>";										
-                }		
-              ?>
-            </div>
+
             <div class="con_wrap">
               <div class="left">
                 <h3 class="tit">The name of certification</h3>
@@ -138,6 +129,17 @@ $row_info = mysqli_fetch_array($result_info)
                 </ul>
               </div>
             </div>
+            <div class="img_wrap">
+              <?php 
+                while($row = mysqli_fetch_array($result)){	
+                  if($row['file'] == "") $row['file'] = "./img/image/paper.png" ;
+                    echo "<div>";														
+                    echo "	<img src='" .$row['file']. "'>";	
+                    echo "</div>";										
+                }		
+              ?>
+            </div>
+
           </div>
         </div>
       </div>

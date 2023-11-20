@@ -317,8 +317,8 @@ footer .social_area {
   #toTop {
     width: 40px;
     height: 40px;
-    bottom: 100px;
-    right: 22px;
+    bottom: 30px;
+    right: 20px;
   }
   #toTop.on {
     bottom: 22px;

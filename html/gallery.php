@@ -88,7 +88,7 @@
               <button class="btn active" onclick="filterSelection('all')">All</button>
               <button class="btn" onclick="filterSelection('development')">Development</button>
               <button class="btn" onclick="filterSelection('language')">Language</button>
-              <button class="btn" onclick="filterSelection('others')">Others</button>
+              <button class="btn" onclick="filterSelection('other')">Others</button>
             </div>
 
             <!-- Portfolio Gallery Grid -->
